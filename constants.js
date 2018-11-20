@@ -387,7 +387,7 @@ export const tracks: Tracks = {
           "Writes effective technical specs outlining approach"
         ],
         examples: [
-          "Wrote the technical spec for Quick User Switching",
+          "Broke down Quick User Switching into tickets with estimations",
           "Delivered low stock warning for iOS",
           "Delivered new User badge"
         ]
@@ -401,7 +401,7 @@ export const tracks: Tracks = {
         ],
         examples: [
           "Delivered basic promotions API endpoint",
-          "Delivered new View Customer design",
+          "Worked with Product Marketing to communicate roll out while delivering new View Customer design",
           "Executed the multiple image uploader for products"
         ]
       },
@@ -415,7 +415,7 @@ export const tracks: Tracks = {
         examples: [
           "Ran project retro to assess improvement opportunities",
           "Completed launch checklist unprompted for well controlled rollout",
-          "Facilitated project kickoff meeting to get buy-in"
+          "Facilitated project kickoff meeting to get buy-in",
         ]
       },
       {
@@ -427,8 +427,8 @@ export const tracks: Tracks = {
         ],
         examples: [
           "Oversaw delivery of Promotions",
-          "Built the features service",
-          "Involved marketing, legal, and appropriate functions at project start"
+          "Managed the building of the features service",
+          "Co-ordinated the different requirements of marketing, legal, and appropriate functions throughout the project"
         ]
       },
       {
