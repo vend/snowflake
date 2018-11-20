@@ -416,6 +416,7 @@ export const tracks: Tracks = {
           "Ran project retro to assess improvement opportunities",
           "Completed launch checklist unprompted for well controlled rollout",
           "Facilitated project kickoff meeting to get buy-in",
+          "Worked with Marketing to define scope and delivery timelines for Crafty CMS"
         ]
       },
       {
