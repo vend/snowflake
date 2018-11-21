@@ -5,6 +5,6 @@ export type Track = {
   milestones: {
     summary: string,
     signals: string[],
-    examples: string[],
-  }[],
+    examples: string[]
+  }[]
 };
