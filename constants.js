@@ -18,18 +18,18 @@ type Tracks = {|
   MENTORSHIP: Track,
   EVANGELISM: Track,
   RECRUITING: Track,
-  COMMUNITY: Track,
+  COMMUNITY: Track
 |};
 
 export type TrackId = $Keys<Tracks>;
 export type Milestone = 0 | 1 | 2 | 3 | 4 | 5;
 
 export type NoteMap = {
-  [TrackId]: ?string,
+  [TrackId]: ?string
 };
 
 export type MilestoneMap = {
-  [TrackId]: Milestone,
+  [TrackId]: Milestone
 };
 export const milestones = [0, 1, 2, 3, 4, 5];
 
@@ -67,7 +67,7 @@ export const pointsToLevels = {
   "74": "4.3",
   "90": "5.1",
   "110": "5.2",
-  "135": "5.3",
+  "135": "5.3"
 };
 
 export const maxLevel = 135;
@@ -83,39 +83,39 @@ export const tracks: Tracks = {
         signals: [
           "Delivers features requiring simple local modifications",
           "Adds simple actions that call server endpoints",
-          "Reuses existing components appropriately",
+          "Reuses existing components appropriately"
         ],
         examples: [
           "Added existing button to a different iOS surface",
           "Add follow button for publications on Android",
-          "Fetched and displayed a new stream, using existing stream item styles",
-        ],
+          "Fetched and displayed a new stream, using existing stream item styles"
+        ]
       },
       {
         summary: "Develops new instances of existing architecture, or minor improvements to existing architecture",
         signals: [
           "Defines new useful and appropriate proto-generated objects",
           "Creates simple new activities on Android",
-          "Migrates code from old patterns to new patterns",
+          "Migrates code from old patterns to new patterns"
         ],
         examples: [
           "Upgraded SDWebImage to a new major version",
           "Added support for a new type of promotion",
-          "Prototyped a simple new feature quickly",
-        ],
+          "Prototyped a simple new feature quickly"
+        ]
       },
       {
         summary: "Designs major new features and demonstrates a nuanced understanding of mobile platform constraints",
         signals: [
           "Implements complex features with a large product surface area",
           "Works effectively with  Android reactive programming framework",
-          "Adds support for new iOS features after a major iOS version upgrade",
+          "Adds support for new iOS features after a major iOS version upgrade"
         ],
         examples: [
           "Designed iOS caching strategy for product search",
           "Built series reader on Android",
-          "Informed the team about recent best practice changes and deprecations",
-        ],
+          "Informed the team about recent best practice changes and deprecations"
+        ]
       },
       {
         summary:
@@ -123,13 +123,13 @@ export const tracks: Tracks = {
         signals: [
           "Pioneers architecture migration strategies that reduce programmer burden",
           "Fixes subtle memory management issues",
-          "Implements interactive dismissals that bring delight",
+          "Implements interactive dismissals that bring delight"
         ],
         examples: [
           "Upgraded CocoaPods to a new major version",
           "Designed architecture for storing and synchronising sales",
-          "Removed all Singletons in iOS app",
-        ],
+          "Removed all Singletons in iOS app"
+        ]
       },
       {
         summary:
@@ -137,15 +137,15 @@ export const tracks: Tracks = {
         signals: [
           "Defines long-term goals and ensures active projects are in service of them",
           "Designs and builds innovative, industry-leading UI interactions",
-          "Invents new techniques to responsibly stretch limits of the Android platform",
+          "Invents new techniques to responsibly stretch limits of the Android platform"
         ],
         examples: [
           "Defined and drove complete migration plan to Swift",
           "Implemented Android recycler views before platform support existed",
-          "Pioneered application-level abstractions for multi-app environment",
-        ],
-      },
-    ],
+          "Pioneered application-level abstractions for multi-app environment"
+        ]
+      }
+    ]
   },
 
   WEB_CLIENT: {
@@ -159,35 +159,35 @@ export const tracks: Tracks = {
         signals: [
           "Makes minor modifications to existing screens",
           "Fixes simple design quality issues",
-          "Uses CSS appropriately, following style guide",
+          "Uses CSS appropriately, following style guide"
         ],
         examples: [
           "Implemented new Houston confirmation banner in the Monoliph",
           "Hooked up the action to dismiss a card from the dashboard",
-          "Reskinned customer list using existing customer badge",
-        ],
+          "Reskinned customer list using existing customer badge"
+        ]
       },
       {
         summary: "Develops new instances of existing architecture, or minor improvements to existing architecture",
         signals: [
           "Makes sensible abstractions based on template and code patterns",
           "Specs and builds interactive components independently",
-          "Prototypes simple new features quickly",
+          "Prototypes simple new features quickly"
         ],
         examples: [
           "Built credit card input component",
           "Created shared datepicker template in Houston",
-          "Built modal system",
-        ],
+          "Built modal system"
+        ]
       },
       {
         summary: "Designs major new features and demonstrates a nuanced understanding of browser constraints",
         signals: [
           "Provides useful design feedback and suggests feasible alternatives",
           "Performs systemic tasks to significantly minimise bundle size",
-          "Acts a caretaker for all of web client code",
+          "Acts a caretaker for all of web client code"
         ],
-        examples: ["Researched utility of HTTP/2 for Vend", "Designed and implemented Add/Edit Product screen"],
+        examples: ["Researched utility of HTTP/2 for Vend", "Designed and implemented Add/Edit Product screen"]
       },
       {
         summary:
@@ -195,28 +195,28 @@ export const tracks: Tracks = {
         signals: [
           "Pioneers architecture migrations that reduce programmer burden",
           "Implements complex UI transitions that bring delight",
-          "Makes architectural decisions that eliminate entire classes of bugs",
+          "Makes architectural decisions that eliminate entire classes of bugs"
         ],
         examples: [
           "Designed Vend's frontend entity storage and syncronisation system",
           "Implemented Vend's multi-framework strategy",
-          "Defined and drove migration strategy from Angular 1.6 to 2",
-        ],
+          "Defined and drove migration strategy from Angular 1.6 to 2"
+        ]
       },
       {
         summary: "Is an industry-leading expert in web client or sets strategic web client direction for an eng team",
         signals: [
           "Invents new techniques to innovate and overcome browser constraints",
           "Identifies and solved systemic problems with current architecture",
-          "Defines a long-term vision for web client and ensures projects are in service of it",
+          "Defines a long-term vision for web client and ensures projects are in service of it"
         ],
         examples: [
           "Invented CSS in JS",
           "Defined and drove migration strategy to Lite",
-          "Implemented unidirectional data flow to completion",
-        ],
-      },
-    ],
+          "Implemented unidirectional data flow to completion"
+        ]
+      }
+    ]
   },
 
   "FOUNDATIONS (PLATFORM)": {
@@ -230,35 +230,35 @@ export const tracks: Tracks = {
         signals: [
           "Writes thorough postmortems for service outages",
           "Makes simple configuration changes to services",
-          "Has knowledge necessary to be level 1 on-call",
+          "Has knowledge necessary to be level 1 on-call"
         ],
         examples: [
           "Made safe and effective changes to app-gulp",
           "Added a new server role using Puppet and Terraform",
-          "Resolved out of disk errors independently",
-        ],
+          "Resolved out of disk errors independently"
+        ]
       },
       {
         summary: "Develops new instances of existing architecture, or minor improvements to existing architecture",
         signals: [
           "Made minor version upgrades to technologies",
           "Creates re-usable components for developers",
-          "Triages service issues correctly and independently",
+          "Triages service issues correctly and independently"
         ],
-        examples: ["Identified source of slow requests in a single service from the edge in"],
+        examples: ["Identified source of slow requests in a single service from the edge in"]
       },
       {
         summary: "Designs standalone systems of moderate complexity, or major new features in existing systems",
         signals: [
           "Acts as primary maintainer for existing critical systems",
           "Designs moderately complex systems",
-          "Makes major version upgrades to libraries",
+          "Makes major version upgrades to libraries"
         ],
         examples: [
           "Designed ENVS3 configuration management",
           "Built Vend log processing and storage pipeline",
-          "Designed flexible framework for writing machine learning jobs",
-        ],
+          "Designed flexible framework for writing machine learning jobs"
+        ]
       },
       {
         summary:
@@ -266,13 +266,13 @@ export const tracks: Tracks = {
         signals: [
           "Designs complex projects that encompass multiple systems and technologies",
           "Demonstrates deep knowledge of foundational systems",
-          "Introduces new databases and technologies to meet underserved needs",
+          "Introduces new databases and technologies to meet underserved needs"
         ],
         examples: [
           "Designed and built Duke",
           "Designed AWS configuration management",
-          "Introduced stream processing with Maxwell and Hydrant",
-        ],
+          "Introduced stream processing with Maxwell and Hydrant"
+        ]
       },
       {
         summary:
@@ -280,15 +280,15 @@ export const tracks: Tracks = {
         signals: [
           "Designs transformational projects in service of long-term goals",
           "Defines the strategic vision for foundational work and supporting technologies",
-          "Invents industry-leading techniques to solve complex problems",
+          "Invents industry-leading techniques to solve complex problems"
         ],
         examples: [
           "Invented a novel ML technique that advanced the state of the art",
           "Defined and developed Vend's continuous delivery strategy",
-          "Developed and implemented DR strategy",
-        ],
-      },
-    ],
+          "Developed and implemented DR strategy"
+        ]
+      }
+    ]
   },
 
   "SERVERS & API": {
@@ -301,39 +301,39 @@ export const tracks: Tracks = {
         signals: [
           "Adds PHP endpoints using Symfony",
           "Adds Go endpoints to a service",
-          "Makes minor server changes to support client needs",
+          "Makes minor server changes to support client needs"
         ],
         examples: [
           "Fixed a small bug in the monoliph Shopify API client",
           "Created a backend tool to version entities",
-          "Wrote a MySQL query that made good use of indexes",
-        ],
+          "Wrote a MySQL query that made good use of indexes"
+        ]
       },
       {
         summary: "Develops new instances of existing architecture, or minor improvements to existing architecture",
         signals: [
           "Assesses correctness and utility of existing code and avoids blind copy-pasting",
           "Generalizes code when appropriate",
-          "Determines data needs from product requirements",
+          "Determines data needs from product requirements"
         ],
         examples: [
           "Identified need for new index on Dynamo",
           "Re-worked ElasticSearch analyzers for better autocompletion results",
-          "Added a new report type to the reporting service",
-        ],
+          "Added a new report type to the reporting service"
+        ]
       },
       {
         summary: "Designs standalone systems of moderate complexity, or major new features in existing systems",
         signals: [
           "Acts as primary maintainer for existing critical systems",
           "Integrates third party services effectively",
-          "Writes playbooks for new service maintenance",
+          "Writes playbooks for new service maintenance"
         ],
         examples: [
           "Re-work reporting to use date-based indexes",
           "Implemented promotions service",
-          "Built Xendo consumer",
-        ],
+          "Built Xendo consumer"
+        ]
       },
       {
         summary:
@@ -341,13 +341,13 @@ export const tracks: Tracks = {
         signals: [
           "Delivers complex systems that achieve their goals",
           "Avoids subtle architectural mistakes when considering new systems",
-          "Makes appropriate buy vs build choices",
+          "Makes appropriate buy vs build choices"
         ],
         examples: [
           "Designed and implemented Vend's mutation-based API",
           "Designed historical inventory system",
-          "Created standards and tools for writing Go microservices",
-        ],
+          "Created standards and tools for writing Go microservices"
+        ]
       },
       {
         summary:
@@ -355,15 +355,15 @@ export const tracks: Tracks = {
         signals: [
           "Designs transformational projects of significant complexity and scope",
           "Makes decisions that have positive, long term, wide ranging consequences",
-          "Identifies and solves systemic problems with current architecture",
+          "Identifies and solves systemic problems with current architecture"
         ],
         examples: [
           "Researched, vetted, and selected Go as Vend's statically typed language",
           "Defined microservices architecture and how services communicate",
-          "Defined and implemented proprietary IP core to the company's success",
-        ],
-      },
-    ],
+          "Defined and implemented proprietary IP core to the company's success"
+        ]
+      }
+    ]
   },
 
   PROJECT_MANAGEMENT: {
@@ -376,39 +376,39 @@ export const tracks: Tracks = {
         signals: [
           "Estimates small tasks accurately",
           "Delivers tightly-scoped projects efficiently",
-          "Writes effective technical specs outlining approach",
+          "Writes effective technical specs outlining approach"
         ],
         examples: [
           "Wrote the technical spec for Quick User Switching",
           "Delivered low stock warning for iOS",
-          "Delivered new User badge",
-        ],
+          "Delivered new User badge"
+        ]
       },
       {
         summary: "Effectively delivers small personal projects",
         signals: [
           "Performs research and considers alternative approaches",
           "Balances pragmatism and polish appropriately",
-          "Defines and hits interim milestones",
+          "Defines and hits interim milestones"
         ],
         examples: [
           "Delivered basic promotions API endpoint",
           "Delivered new View Customer design",
-          "Executed the multiple image uploader for products",
-        ],
+          "Executed the multiple image uploader for products"
+        ]
       },
       {
         summary: "Effectively delivers projects through a small team",
         signals: [
           "Delegates tasks to others appropriately",
           "Integrates business needs into project planning",
-          "Chooses appropriate project management strategy based on context",
+          "Chooses appropriate project management strategy based on context"
         ],
         examples: [
           "Ran project retro to assess improvement opportunities",
           "Completed launch checklist unprompted for well controlled rollout",
-          "Facilitated project kickoff meeting to get buy-in",
-        ],
+          "Facilitated project kickoff meeting to get buy-in"
+        ]
       },
       {
         summary:
@@ -416,28 +416,28 @@ export const tracks: Tracks = {
         signals: [
           "Finds ways to deliver requested scope faster, and prioritizes backlog",
           "Manages dependencies on other projects and teams",
-          "Leverages recognition of repeated project patterns",
+          "Leverages recognition of repeated project patterns"
         ],
         examples: [
           "Oversaw delivery of Promotions",
           "Built the features service",
-          "Involved marketing, legal, and appropriate functions at project start",
-        ],
+          "Involved marketing, legal, and appropriate functions at project start"
+        ]
       },
       {
         summary: "Manages major company pushes delivered by multiple teams",
         signals: [
           "Considers external constraints and business objectives when planning",
           "Leads teams of teams, and coordinates effective cross-functional collaboration",
-          "Owns a key company metric",
+          "Owns a key company metric"
         ],
         examples: [
           "Managed migration to AWS",
           "Managed delivery of Christmas 2017 priorities",
-          "Delivered multi-month engineering project on time",
-        ],
-      },
-    ],
+          "Delivered multi-month engineering project on time"
+        ]
+      }
+    ]
   },
 
   COMMUNICATION: {
@@ -451,13 +451,13 @@ export const tracks: Tracks = {
         signals: [
           "Communicates project status clearly and effectively",
           "Collaborates with others with empathy",
-          "Asks for help at the appropriate juncture",
+          "Asks for help at the appropriate juncture"
         ],
         examples: [
           "Updated oncall-engineers before running a resource-intensive task.",
           "Updated issue status changes in Jira promptly",
-          "Gave thoughtful meeting check-in and check-out comments",
-        ],
+          "Gave thoughtful meeting check-in and check-out comments"
+        ]
       },
       {
         summary:
@@ -465,13 +465,13 @@ export const tracks: Tracks = {
         signals: [
           "Practises active listening and suspension of attention",
           "Ensures stakeholders are aware of current blockers",
-          "Chooses the appropriate tools for accurate and timely communication",
+          "Chooses the appropriate tools for accurate and timely communication"
         ],
         examples: [
           "Received and integrated critical feedback positively",
           "Created cross-team Slack channel for payments work",
-          "Spoke to domain experts before writing spec",
-        ],
+          "Spoke to domain experts before writing spec"
+        ]
       },
       {
         summary:
@@ -479,13 +479,13 @@ export const tracks: Tracks = {
         signals: [
           "Resolves communication difficulties between others",
           "Anticipates and shares schedule deviations in plenty of time",
-          "Manages project stakeholder expectations effectively",
+          "Manages project stakeholder expectations effectively"
         ],
         examples: [
           "Directed team response effectively during outages",
           "Gathered multiple stakeholders together to communicate a priority change",
-          "Gave notice of upcoming related work in Band Practise",
-        ],
+          "Gave notice of upcoming related work in Band Practise"
+        ]
       },
       {
         summary:
@@ -493,13 +493,13 @@ export const tracks: Tracks = {
         signals: [
           "Communicates project risk and tradeoffs skillfully and with nuance",
           "Contextualizes and clarifies ambiguous direction and strategy for others",
-          "Negotiates resourcing compromises with other teams",
+          "Negotiates resourcing compromises with other teams"
         ],
         examples: [
           "Lead off-site workshop on interviewing",
           "Implemented Vend's engineering growth framework",
-          "Aligned the entire organization around the release of Promotions",
-        ],
+          "Aligned the entire organization around the release of Promotions"
+        ]
       },
       {
         summary:
@@ -507,15 +507,15 @@ export const tracks: Tracks = {
         signals: [
           "Defines processes for clear communication for the entire team",
           "Shares the right amount of information with the right people, at the right time",
-          "Develops and delivers plans to execs, the board, and outside investors",
+          "Develops and delivers plans to execs, the board, and outside investors"
         ],
         examples: [
           "Organized half year check-in company offsite",
           "Created the communication plan for a large organizational change",
-          "Presented to the board about key company metrics and projects",
-        ],
-      },
-    ],
+          "Presented to the board about key company metrics and projects"
+        ]
+      }
+    ]
   },
 
   CRAFT: {
@@ -528,13 +528,13 @@ export const tracks: Tracks = {
         signals: [
           "Tests new code thoroughly, both locally, and in production once shipped",
           "Writes tests for every new feature and bug fix",
-          "Writes clear comments and documentation",
+          "Writes clear comments and documentation"
         ],
         examples: [
           "Caught a bug while playing with a feature before it went live",
           "Landed non-trivial PR with no caretaker comments",
-          "Wrote good hermetic tests for a microservice",
-        ],
+          "Wrote good hermetic tests for a microservice"
+        ]
       },
       {
         summary:
@@ -542,26 +542,26 @@ export const tracks: Tracks = {
         signals: [
           "Refactors existing code to make it more testable",
           "Adds tests for uncovered areas",
-          "Deletes unnecessary code and deprecates proactively when safe to do so",
+          "Deletes unnecessary code and deprecates proactively when safe to do so"
         ],
         examples: [
           "Requested tests for a PR when acting as reviewer",
           "Removed unused feature flags in the monoliph",
-          "Fixed a TODO for someone else in the codebase",
-        ],
+          "Fixed a TODO for someone else in the codebase"
+        ]
       },
       {
         summary: "Improves others' ability to deliver great quality work",
         signals: [
           "Implements systems that enable better testing",
           "Gives thoughtful code reviews as a domain expert",
-          "Adds tooling to improve code quality",
+          "Adds tooling to improve code quality"
         ],
         examples: [
           "Improved build pipeline to run the same volume of tests faster",
           "Improved dev container build speed and moved all containers from Quay to ECR",
-          "Created a shared library after seeing multiple projects doing the same thing ",
-        ],
+          "Created a shared library after seeing multiple projects doing the same thing "
+        ]
       },
       {
         summary:
@@ -569,12 +569,12 @@ export const tracks: Tracks = {
         signals: [
           "Builds systems so as to eliminate entire classes of programmer error",
           "Focuses the team on quality with regular reminders",
-          "Coordinates support team ticket volume meetings and prioritises findings",
+          "Coordinates support team ticket volume meetings and prioritises findings"
         ],
         examples: [
           "Implemented a strategy to attack flakey build pipelines",
-          "Defined and oversaw plan for closing Heartbleed vulnerability",
-        ],
+          "Defined and oversaw plan for closing Heartbleed vulnerability"
+        ]
       },
       {
         summary:
@@ -582,15 +582,15 @@ export const tracks: Tracks = {
         signals: [
           "Defines policies for the engineering org that encourage quality work",
           "Identifies and eliminates single points of failure throughout the organization",
-          "Secures time and resources from execs to support great quality",
+          "Secures time and resources from execs to support great quality"
         ],
         examples: [
           "Negotiated resources for Standardisation Sprints",
           "",
-          "Implemented compensation for on-call rotation",
-        ],
-      },
-    ],
+          "Implemented compensation for on-call rotation"
+        ]
+      }
+    ]
   },
 
   INITIATIVE: {
@@ -603,9 +603,9 @@ export const tracks: Tracks = {
         signals: [
           "Writes Confluence page about improvement opportunities",
           "Raises meaningful tensions in tactical meetings",
-          "Asks leadership team insightful questions at AMA ",
+          "Asks leadership team insightful questions at AMA "
         ],
-        examples: ["Wrote about problems with ECS on Confluence", "", "Reported a site issue in Github"],
+        examples: ["Wrote about problems with ECS on Confluence", "", "Reported a site issue in Github"]
       },
       {
         summary:
@@ -613,26 +613,26 @@ export const tracks: Tracks = {
         signals: [
           "Picks bugs off the backlog proactively when blocked elsewhere",
           "Makes design quality improvements unprompted",
-          "Takes on trust and safety tasks proactively when blocked elsewhere",
+          "Takes on trust and safety tasks proactively when blocked elsewhere"
         ],
         examples: [
           "Advocated on own behalf for a change in role",
           "Implemented feature service API in Go Common",
-          "Audited web client performance in Chrome and proposed fixes",
-        ],
+          "Audited web client performance in Chrome and proposed fixes"
+        ]
       },
       {
         summary: "Causes change to positively impact an entire team or instigates a minor feature or service",
         signals: [
           "Demonstrates concepts proactively with prototypes",
           "Fixes complicated bugs outside of regular domain",
-          "Takes ownership of systems that nobody owns or wants",
+          "Takes ownership of systems that nobody owns or wants"
         ],
         examples: [
           "Defined style guide to resolve style arguments",
           "Proposed and implemented at-mentions prototype",
-          "Made significant improvments to Monoliph Jenkins pipeline, unprompted",
-        ],
+          "Made significant improvments to Monoliph Jenkins pipeline, unprompted"
+        ]
       },
       {
         summary:
@@ -640,28 +640,28 @@ export const tracks: Tracks = {
         signals: [
           "Champions and pioneers new technologies to solve new classes of problem",
           "Exemplifies grit and determination in the face of persistent obstacles",
-          "Instigates major new features, services, or architectures",
+          "Instigates major new features, services, or architectures"
         ],
         examples: [
           "Created the interviewing rubric and booklet",
           "Implemented and secured support for 2FA login",
-          "Migrated go-common to individual repos for maintainability",
-        ],
+          "Migrated go-common to individual repos for maintainability"
+        ]
       },
       {
         summary: "Effects change that has a substantial positive impact on the whole company",
         signals: [
           "Creates a new function to solve systemic issues",
           "Galvanizes the entire company and garners buy in for a new strategy",
-          "Changes complex organizational processes",
+          "Changes complex organizational processes"
         ],
         examples: [
           "Migrated team structure from Solutions to Product+Engineering",
           "Built Scanner prototype and convinced company to launch it",
-          "Convinced leadership and engineering org to move from Rackspace to AWS",
-        ],
-      },
-    ],
+          "Convinced leadership and engineering org to move from Rackspace to AWS"
+        ]
+      }
+    ]
   },
 
   CAREER_DEVELOPMENT: {
@@ -674,39 +674,39 @@ export const tracks: Tracks = {
         signals: [
           "Has a career plan or some form of growth plan in place",
           "Shares opportunities for improvements and recognises achievements",
-          "Understands growth opportunities available to them",
+          "Understands growth opportunities available to them"
         ],
         examples: [
           "Engaged in career development conversation with their manager",
           "Discussed career options and areas of interest informally",
-          "Provided informal ideas for a team member's career growth",
-        ],
+          "Provided informal ideas for a team member's career growth"
+        ]
       },
       {
         summary: "Formally supports and advocates for one person and provides tools to help them solve career problems",
         signals: [
           "Ensure a team member has an appropriate role on their team",
           "Offers effective career advice to team members, without being prescriptive",
-          "Creates space for people to talk through challenges",
+          "Creates space for people to talk through challenges"
         ],
         examples: [
           "Set up and attended regular, constructive 1:1s ",
           "Provided coaching on how to have difficult conversations",
-          "Taught team members the GROW model",
-        ],
+          "Taught team members the GROW model"
+        ]
       },
       {
         summary: "Inspires and retains a small group of people and actively pushes them to stretch themselves",
         signals: [
           "Discusses paths, and creates plans for personal and professional growth",
           "Advocates to align people with appropriate roles within organization",
-          "Works with team leads to elevate emerging leaders",
+          "Works with team leads to elevate emerging leaders"
         ],
         examples: [
           "Reviewed individual team progression regularly",
           "Suggested appropriate team member for a new position",
-          "Arranged a requested switch of discipline for a group member",
-        ],
+          "Arranged a requested switch of discipline for a group member"
+        ]
       },
       {
         summary:
@@ -714,13 +714,13 @@ export const tracks: Tracks = {
         signals: [
           "Manages team transitions smoothly, respecting team and individual needs",
           "Develops best practices for conflict resolution",
-          "Ensures all group members' roles are meeting their career needs",
+          "Ensures all group members' roles are meeting their career needs"
         ],
         examples: [
           "Completed leadership training",
           "Built a resourcing plan based on company, team, and individual goals",
-          "Prevented regretted attrition with intentional, targeted intervention",
-        ],
+          "Prevented regretted attrition with intentional, targeted intervention"
+        ]
       },
       {
         summary:
@@ -728,15 +728,15 @@ export const tracks: Tracks = {
         signals: [
           "Supports and develops senior leaders",
           "Identified leadership training opportunities for senior leadership",
-          "Pushes everyone to be as good as they can be, with empathy",
+          "Pushes everyone to be as good as they can be, with empathy"
         ],
         examples: [
           "Provided coaching to team leads",
           "Devised growth plan for team leads",
-          "Advocated to execs for engineer development resources and programs",
-        ],
-      },
-    ],
+          "Advocated to execs for engineer development resources and programs"
+        ]
+      }
+    ]
   },
 
   ORG_DESIGN: {
@@ -750,13 +750,13 @@ export const tracks: Tracks = {
         signals: [
           "Reflects on meetings that leave them inspired or frustrated",
           "Teaches others about existing processes",
-          "Actively participates and makes contributions within organizational processes",
+          "Actively participates and makes contributions within organizational processes"
         ],
         examples: [
           "Facilitated effective meetings with empathy",
           "Explained sprint planning format to a new hire",
-          "Provided feedback on sprint planning meeting",
-        ],
+          "Provided feedback on sprint planning meeting"
+        ]
       },
       {
         summary:
@@ -764,54 +764,54 @@ export const tracks: Tracks = {
         signals: [
           "Defines meeting structure and cadence that meets team needs",
           "Engages in organizational systems thinking",
-          "Advocates for improved diversity and inclusion, and proposes ideas to help",
+          "Advocates for improved diversity and inclusion, and proposes ideas to help"
         ],
         examples: [
           "Defined sprint planning structure for small team",
           "Improved on-call rotation scheduling",
-          "Defined standard channels for inter-team communication",
-        ],
+          "Defined standard channels for inter-team communication"
+        ]
       },
       {
         summary: "Develops processes and programs to solve ongoing organizational problems",
         signals: [
           "Creates programs that meaningfully improve organizational diversity",
           "Solves long-standing organizational problems",
-          "Reallocates resources to meet organizational needs",
+          "Reallocates resources to meet organizational needs"
         ],
         examples: [
           "Developed 90-day plan template",
           "Created bug-rotation program to address ongoing quality issues",
-          "Defined Frontend Guild manifesto",
-        ],
+          "Defined Frontend Guild manifesto"
+        ]
       },
       {
         summary: "Thinks deeply about organizational issues and identifies hidden dynamics that contribute to them",
         signals: [
           "Evaluates incentive structures and their effect on execution",
           "Analyzes existing processes for bias and shortfall",
-          "Ties abstract concerns to concrete organizational actions or norms",
+          "Ties abstract concerns to concrete organizational actions or norms"
         ],
         examples: [
           "Connected mobile recruiting difficulties to focus on excellence",
           "Raised leadership level discrepancies",
-          "Analyzed the hiring process for false negative potential",
-        ],
+          "Analyzed the hiring process for false negative potential"
+        ]
       },
       {
         summary: "Leads initiatives to address issues stemming from hidden dynamics and company norms",
         signals: [
           "Builds programs to train leadership in desired skills",
           "Creates new structures that provide unique growth opportunities",
-          "Leads planning and communication for reorgs",
+          "Leads planning and communication for reorgs"
         ],
         examples: [
           "Lead efforts to increase investment in Engineering",
           "Directed resources to meaningfully improve diversity at all levels",
-          "Reviewed and aligned salaries across similar levels.",
-        ],
-      },
-    ],
+          "Reviewed and aligned salaries across similar levels."
+        ]
+      }
+    ]
   },
 
   WELLBEING: {
@@ -824,52 +824,52 @@ export const tracks: Tracks = {
         signals: [
           "Keeps confidences unless legally or morally obliged to do otherwise",
           "Applies the reasonable person principle to others",
-          "Avoids blame and focuses on positive change",
+          "Avoids blame and focuses on positive change"
         ],
         examples: [
           "Ensured group members were taking enough vacation",
           "Put themself in another's shoes to understand their perspective",
-          "Checked in with colleague showing signs of burnout",
-        ],
+          "Checked in with colleague showing signs of burnout"
+        ]
       },
       {
         summary: "Creates a positive, supportive, engaging team environment for group members",
         signals: [
           "Sheds light on other experiences to build empathy and compassion",
           "Validates ongoing work and sustains motivation",
-          "Proposes solutions when teams get bogged down or lose momentum",
+          "Proposes solutions when teams get bogged down or lose momentum"
         ],
         examples: [
           "Coordinated a small celebration for a project launch",
           "Connected tedious A|B testing project with overall company goals",
-          "Noted a team without a recent win and suggested some easy quick wins",
-        ],
+          "Noted a team without a recent win and suggested some easy quick wins"
+        ]
       },
       {
         summary: "Manages expectations across peers, leads in the org, promotes calm, and prevents consensus building",
         signals: [
           "Trains group members to separate stimulus from response",
           "Maintains a pulse on individual and team morale",
-          "Helps group members approach problems with curiosity",
+          "Helps group members approach problems with curiosity"
         ],
         examples: [
           "Completed training on transference and counter transference",
           "Completed training on compromise and negotiation techniques",
-          "Reframed a problem as a challenge, instead of a barrier, when appropriate",
-        ],
+          "Reframed a problem as a challenge, instead of a barrier, when appropriate"
+        ]
       },
       {
         summary: "Advocates for the needs of teams and group members, and proactively works to calm the organization",
         signals: [
           "Ensures team environments are safe and inclusive, proactively",
           "Grounds group member anxieties in reality",
-          "Tracks team retention actively and proposes solutions to strengthen it",
+          "Tracks team retention actively and proposes solutions to strengthen it"
         ],
         examples: [
           "Relieved org tension around product direction by providing extra context",
           "Encouraged group members to focus on what they can control",
-          "Guided people through complex organizational change",
-        ],
+          "Guided people through complex organizational change"
+        ]
       },
       {
         summary:
@@ -877,15 +877,15 @@ export const tracks: Tracks = {
         signals: [
           "Recognizes and points out narratives when appropriate",
           "Works to reshape narratives from victimization to ownership",
-          "Increases the psychological safety of the entire team",
+          "Increases the psychological safety of the entire team"
         ],
         examples: [
           "Converted group member from a problem haver to a problem solver",
           "Challenged false narrative and redirected to compassion and empathy",
-          "Cultivated and championed a culture of empathy within the entire team",
-        ],
-      },
-    ],
+          "Cultivated and championed a culture of empathy within the entire team"
+        ]
+      }
+    ]
   },
 
   ACCOMPLISHMENT: {
@@ -899,67 +899,67 @@ export const tracks: Tracks = {
         signals: [
           "Notices when someone is stuck and reaches out",
           "Helps others break down problems into feasible, tangible next steps",
-          "Talks through problems non-judgmentally",
+          "Talks through problems non-judgmentally"
         ],
         examples: [
           "Completed training on diagnosing problems",
           "Unblocked a group member",
-          "Reinforces and affirms positive feedback for good work",
-        ],
+          "Reinforces and affirms positive feedback for good work"
+        ]
       },
       {
         summary: "Helps individuals resolve difficult performance issues, with insight, compassion, and skill",
         signals: [
           "Gathers context outside the immediate problem",
           "Recognizes issues within local environment and suggests change",
-          "Works to encourage ownership of actions and responsibilities",
+          "Works to encourage ownership of actions and responsibilities"
         ],
         examples: [
           "Completed training on decision making",
           "Convinced a team member to solve a problem directly, rather than doing it for them",
-          "Gave honest feedback about poor performance, with compassion",
-        ],
+          "Gave honest feedback about poor performance, with compassion"
+        ]
       },
       {
         summary: "Intervenes in long-standing performance issues with targeted behavior change or performance plans",
         signals: [
           "Aggregates signals of poor performance and creates process for improvement",
           "Investigates motivation and externalities for consistent poor performance",
-          "Puts together comprehensive, achievable performance plans",
+          "Puts together comprehensive, achievable performance plans"
         ],
         examples: [
           "Worked with group member to address persistent communication failures",
           "Arranged a transfer to another team, resulting in improved performance",
-          "Managed group member closely to maximise chances of PIP success",
-        ],
+          "Managed group member closely to maximise chances of PIP success"
+        ]
       },
       {
         summary: "Mediates escalated situations, empowers underperforming teams, and resolves conflict",
         signals: [
           "Recognizes heightened situations and toxic or aggressive interactions",
           "Inserts themself into conflict where appropriate to calm and mediate",
-          "Encourages open dialog and builds trust between parties in conflict",
+          "Encourages open dialog and builds trust between parties in conflict"
         ],
         examples: [
           "Empowered a team to drive forward amidst uncertainty",
           "Protected team from externalities so they could focus on goals",
-          "Mediated sit-down between team members to address tension",
-        ],
+          "Mediated sit-down between team members to address tension"
+        ]
       },
       {
         summary: "Resolves complex organizational dysfunction, or persistent conflict at senior levels",
         signals: [
           "Takes control of dysfunctional teams to organise chaos",
           "Repairs broken team dynamics and builds harmony",
-          "Presides over a well-oiled team of teams",
+          "Presides over a well-oiled team of teams"
         ],
         examples: [
           "Turned around the performance of a problematic team",
           "De-escalated serious tensions between teams",
-          "Rebuilt trust between senior team leads",
-        ],
-      },
-    ],
+          "Rebuilt trust between senior team leads"
+        ]
+      }
+    ]
   },
 
   MENTORSHIP: {
@@ -974,67 +974,67 @@ export const tracks: Tracks = {
         signals: [
           "Makes themself available for informal support and advice",
           "Acts as sounding board for peers and more junior members",
-          "Provides sound advice when asked",
+          "Provides sound advice when asked"
         ],
         examples: [
           "Acted as an onboarding buddy",
           "Paired with an engineer to help them with an unfamiliar area",
-          "Helped a colleague understand their feelings",
-        ],
+          "Helped a colleague understand their feelings"
+        ]
       },
       {
         summary: "Mentors people proactively, and guides people to realizations rather than providing the answer",
         signals: [
           "Takes time to explain concepts and best practices",
           "Asks questions to illuminate concepts, rather than stating them",
-          "Allows others to lead efforts when it will help their development",
+          "Allows others to lead efforts when it will help their development"
         ],
         examples: [
           "Shared interesting article with a team member to help with their growth",
           "Offered unprompted feedback to help growth, with empathy",
-          "Lead from behind to support someone new to a leadership role",
-        ],
+          "Lead from behind to support someone new to a leadership role"
+        ]
       },
       {
         summary: "Teaches small groups of engineers and contributes to Vend's shared knowledge base",
         signals: [
           "Avoids siloing information when it can be usefully shared with others",
           "Works to increase the bus factor of systems",
-          "Finds tools that work best for a team member's personality",
+          "Finds tools that work best for a team member's personality"
         ],
         examples: [
           "Gave a lunch'n'learn presentation on Go",
           "Wrote Wiki page on how to run a complex db migration",
-          "Answered multiple Confluence Questions with clarity",
-        ],
+          "Answered multiple Confluence Questions with clarity"
+        ]
       },
       {
         summary: "Encourages people to mentor each other, and creates ways for them to do so",
         signals: [
           "Defines an entire curriculum for a discipline",
           "Draws positive attention to well-modeled mentor and teaching behaviours",
-          "Creates lunch-n-learn series and lines up speakers",
+          "Creates lunch-n-learn series and lines up speakers"
         ],
         examples: [
           "Created and lead Vend's Frontend platform group",
           "Organized an Eng All Hands with an outside speaker",
-          "Designed and taught Go microservices curriculum",
-        ],
+          "Designed and taught Go microservices curriculum"
+        ]
       },
       {
         summary: "Instills and promotes a culture of learning and development within the entire engineering team",
         signals: [
           "Sets incentive structures to recognise and reward mentorship",
           "Empowers team members to develop themselves",
-          "Role models productive and healthy mentor relationships",
+          "Role models productive and healthy mentor relationships"
         ],
         examples: [
           "Instituted the professional education budget for engineers",
           "Mentored mentors",
-          "Took team members on visits to SF tech leaders",
-        ],
-      },
-    ],
+          "Took team members on visits to SF tech leaders"
+        ]
+      }
+    ]
   },
 
   EVANGELISM: {
@@ -1047,13 +1047,13 @@ export const tracks: Tracks = {
         signals: [
           "Shares personal and organizational successes with their network",
           "Attends Vend-hosted events and talks with guests",
-          "Communicates genuine and honest excitement about their work externally",
+          "Communicates genuine and honest excitement about their work externally"
         ],
         examples: [
           "Shared a Vend product launch post on Facebook",
           "Acted as a guide for a non-friend visitor to the office",
-          "Supported PR efforts by giving a quote or having a photo taken",
-        ],
+          "Supported PR efforts by giving a quote or having a photo taken"
+        ]
       },
       {
         summary:
@@ -1061,54 +1061,54 @@ export const tracks: Tracks = {
         signals: [
           "Takes meaningful action to introduce people to Vend",
           "Joined public Slack group and represented Vend appropriately, and well",
-          "Organizes positive small- or medium-sized events that bring people to Vend",
+          "Organizes positive small- or medium-sized events that bring people to Vend"
         ],
         examples: [
           "Volunteered as a helper for Summer of Tech workshops",
           "Organized a short tour of the office by college students",
-          "Talked at a Women Who Code event hosted at Vend",
-        ],
+          "Talked at a Women Who Code event hosted at Vend"
+        ]
       },
       {
         summary: "Works hard to positively influence large groups of people on their views of Vend",
         signals: [
           "Mentors or participates in a high visibility way in an external organization",
           "Builds fruitful partnerships with external organizations",
-          "Writes blog posts about Vend that receive moderate traffic",
+          "Writes blog posts about Vend that receive moderate traffic"
         ],
         examples: [
           "Represented Vend on a panel at a conference of industry experts",
           "Established close ties with Callaghan",
-          "Built a durable, long-standing org relationship with industry bodies",
-        ],
+          "Built a durable, long-standing org relationship with industry bodies"
+        ]
       },
       {
         summary: "Establishes Vend as an great, innovative company and workplace to the whole industry",
         signals: [
           "Establishes themself as an industry thought leader who attracts talent",
           "Publishes material about Vend's organizational or technical innovations",
-          "Leverages significant following to evangelise Vend",
+          "Leverages significant following to evangelise Vend"
         ],
         examples: [
           "Published a paper on Vend technology in a peer-reviewed journal",
           "Authored press release on HTTPoxy",
-          "Published a great technical post on the Vend engineering blog",
-        ],
+          "Published a great technical post on the Vend engineering blog"
+        ]
       },
       {
         summary: "Introduces Vend in a positive light to a wider audience outside the industry",
         signals: [
           "Delivers key messages to broad, mainstream audiences",
           "Influences people with large audiences to talk about Vend positively",
-          "Drives recognition and adoption of Vend in significant numbers",
+          "Drives recognition and adoption of Vend in significant numbers"
         ],
         examples: [
           "Published or interviewed in a mainstream newspaper or website outside tech",
           "Keynoted a conference with international attention",
-          "Represented Vend in national televised media",
-        ],
-      },
-    ],
+          "Represented Vend in national televised media"
+        ]
+      }
+    ]
   },
 
   RECRUITING: {
@@ -1121,13 +1121,13 @@ export const tracks: Tracks = {
         signals: [
           "Reviews existing network for hiring leads regularly",
           "Shadows interviews to gain familiarity with process",
-          "Reviews current job postings regularly",
+          "Reviews current job postings regularly"
         ],
         examples: [
           "Completed interview calibration",
           "Set up casual sessions to practice asking questions",
-          "Referred appropriate individuals for open positions",
-        ],
+          "Referred appropriate individuals for open positions"
+        ]
       },
       {
         summary:
@@ -1135,13 +1135,13 @@ export const tracks: Tracks = {
         signals: [
           "Provides clear, objective feedback on candidates (we should have an interview rubric)",
           "Interviews candidates with empathy and treats them all with equal respect",
-          "Researches approaches for sourcing candidates and diversifying hiring",
+          "Researches approaches for sourcing candidates and diversifying hiring"
         ],
         examples: [
           "Added observable evidence for interview feedback",
           "Started a monthly brunch for candidates to meet Vend employees",
-          "",
-        ],
+          ""
+        ]
       },
       {
         summary:
@@ -1149,17 +1149,17 @@ export const tracks: Tracks = {
         signals: [
           "Teaches new interviewers how to interview with empathy",
           "Models great interview technique and feedback when shadowed",
-          "Reverse shadows trainees and helps calibrate their feedback",
+          "Reverse shadows trainees and helps calibrate their feedback"
         ],
         examples: [
           "Talked with a senior candidate over many months to fill a critical role",
           "Organized efforts around convincing acquired engineers to join and stay",
-          "Set goals, then tracked and reported metrics on team demographics over time",
-        ],
-      },
-    ],
+          "Set goals, then tracked and reported metrics on team demographics over time"
+        ]
+      }
+    ]
   },
-  COMMUNITY,
+  COMMUNITY
 };
 
 console.log(tracks);
@@ -1202,7 +1202,7 @@ export const titles = [
   { label: "Senior Engineer", minPoints: 36, maxPoints: 57 },
   { label: "Engineer IV", minPoints: 58, maxPoints: 89 },
   { label: "Principal Engineer", minPoints: 58, maxPoints: 89 },
-  { label: "Engineer V", minPoints: 90 },
+  { label: "Engineer V", minPoints: 90 }
 ];
 
 export const eligibleTitles = (milestoneMap: MilestoneMap): string[] => {
