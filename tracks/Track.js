@@ -7,4 +7,4 @@ export type Track = {
     signals: string[],
     examples: string[],
   }[],
-}
+};
