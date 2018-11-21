@@ -382,12 +382,12 @@ export const tracks: Tracks = {
       {
         summary: "Effectively delivers individual tasks",
         signals: [
+          "Communicates status of tasks in a timely fashion",
           "Estimates small tasks accurately",
           "Delivers tightly-scoped projects efficiently",
-          "Writes effective technical specs outlining approach"
         ],
         examples: [
-          "Broke down Quick User Switching into tickets with estimations",
+          "Effectively estimated assigned Jira tickets for Quick User Switching"
           "Delivered low stock warning for iOS",
           "Delivered new User badge"
         ]
@@ -402,7 +402,8 @@ export const tracks: Tracks = {
         examples: [
           "Delivered basic promotions API endpoint",
           "Worked with Product Marketing to communicate roll out while delivering new View Customer design",
-          "Executed the multiple image uploader for products"
+          "Executed the multiple image uploader for products",
+          "Broke down Home Dashboard Integrated Payment Recommendations into tickets with estimations",
         ]
       },
       {
@@ -429,7 +430,7 @@ export const tracks: Tracks = {
         examples: [
           "Oversaw delivery of Promotions",
           "Managed the building of the features service",
-          "Co-ordinated the different requirements of marketing, legal, and appropriate functions throughout the project"
+          "Co-ordinated the different requirements of marketing, legal, and appropriate functions throughout the GDPR project"
         ]
       },
       {
@@ -472,6 +473,7 @@ export const tracks: Tracks = {
         signals: [
           "Practises active listening and suspension of attention",
           "Chooses the appropriate tools for accurate and timely communication"
+          "Writes effective technical specs outlining approach"
         ],
         examples: [
           "Received and integrated critical feedback positively",
