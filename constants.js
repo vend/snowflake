@@ -1152,6 +1152,34 @@ export const tracks: Tracks = {
           "Reverse shadows trainees and helps calibrate their feedback"
         ],
         examples: [
+          "Wrote fantastic new interview questions that are measurable and insightful",
+          "Brought candidates into our pipeline proactively, with a high conversion rate",
+          "Proposed useful, tangible improvements to the interview process"
+        ]
+      },
+      {
+        summary:
+          "Actively contributes to and leads hiring decisions, and goes to great lengths to source great candidates",
+        signals: [
+          "Documents subtle cues in interviews that indicate values alignment",
+          "Makes hiring decisions, resolving discrepancies between conflicting reports",
+          "Top-grades candidates and teases out character traits"
+        ],
+        examples: [
+          "Planned engineering summit on interview process and training",
+          "Organized and lead Vend's presence at a recruitment fair",
+          "Started internship program"
+        ]
+      },
+      {
+        summary:
+          "Sets recruitment strategy, invests in long-term relationships for critical roles, and recruits at scale",
+        signals: [
+          "Sets the tone, policy and goals around building a diverse, high-quality team",
+          "Identifies and brings in promising acquisitions",
+          "Tracks industry activity, identifying opportunities for critical roles"
+        ],
+        examples: [
           "Talked with a senior candidate over many months to fill a critical role",
           "Organized efforts around convincing acquired engineers to join and stay",
           "Set goals, then tracked and reported metrics on team demographics over time"
@@ -1161,8 +1189,6 @@ export const tracks: Tracks = {
   },
   COMMUNITY
 };
-
-console.log(tracks);
 
 export const trackIds: TrackId[] = Object.keys(tracks);
 
