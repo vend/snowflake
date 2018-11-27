@@ -12,14 +12,14 @@ export const COMMUNITY: Track = {
       signals: [
         "Treats colleagues and clients with respect",
         "Participates in team activities and events",
-        "Joins and participates to internal groups or initiatives"
+        "Joins and participates in internal groups or initiatives"
       ],
       examples: [
         "Joined and actively participated in the Frontend community group",
         "Brought a small gift back from vacation for the team",
         "Constantly celebrated the team achievements",
-        "Participated meaningfully to the team meetings",
-        "Paired up with X to help them learn or unblock a situation",
+        "Participated meaningfully in the team meetings",
+        "Paired up with other developers to help them learn or unblock a situation",
         "Wrote entertaining and informative incident review updates on Confluence"
       ]
     },
@@ -51,9 +51,9 @@ export const COMMUNITY: Track = {
         "Handles on-call with little support while still contributing to projects",
         "Started and drove the diversity and ally skills training",
         "Stayed positive and improved team morale during period after layoffs",
-        "Helped team X move forward with their work by sharing knowledge/pairing...",
-        "Constantly enabled others as the specialist in X",
-        "Raised up and clearly communicated risks and impediments on behalf of X",
+        "Helped another team move forward with their work by sharing knowledge/pairing...",
+        "Constantly enabled others as the specialist in Go",
+        "Raised up and clearly communicated risks and impediments on behalf of another team member",
         "Helped improve the team culture by creating a team specific tradition"
       ]
     },
@@ -65,13 +65,13 @@ export const COMMUNITY: Track = {
         "Takes on large amounts of tedious grunt work for the team without being asked"
       ],
       examples: [
-        "Took on setting up tooling for the project the team in woerking on",
+        "Took on setting up tooling for the project the team is working on",
         "Refactored a multitude of legacy PHP issues",
         "Created an automated testing pipeline for the team project",
         "Acted as sole maintainer of Jenkins for years",
         "Created and applied a team onboarding programme for newcomers",
         "Ran training sessions on React for the entire team",
-        "Improved our team development experience by introducing X",
+        "Improved our team development experience by introducing a static analyser tool",
         "Constantly shared credit and promoted individuals from the team"
       ]
     },
@@ -87,9 +87,9 @@ export const COMMUNITY: Track = {
         "Organized summer BBQ for the whole engineering group",
         "Devised, delivered and acted on findings from an engagement survey",
         "Challenged and corrected exclusionary behaviour or policies",
-        "Organised cross team events to help mix and match people",
+        "Organised cross-team events to help mix and match people",
         "Set up a regular event for the whole office to share achievements, failures and learnings",
-        "Created and led a cross-teams engineer rotation and immersion programme"
+        "Created and led a cross-team engineer rotation and immersion programme"
       ]
     }
   ]
