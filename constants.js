@@ -493,8 +493,7 @@ export const tracks: Tracks = {
         examples: [
           "Directed team response effectively during outages",
           "Gathered multiple stakeholders together to communicate a priority change",
-          "Gave notice of upcoming related work in Band Practise",
-          "Created a cross-team Slack channel to collect and update stakeholders for multiple projects"
+          "Gave notice of upcoming related work in Band Practise"
         ]
       },
       {
