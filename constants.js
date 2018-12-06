@@ -494,7 +494,7 @@ export const tracks: Tracks = {
           "Directed team response effectively during outages",
           "Gathered multiple stakeholders together to communicate a priority change",
           "Gave notice of upcoming related work in Band Practise",
-          "Anticipated impact of design changes on the delivery schedule and worked with design and product to best design a solution while meeting the committed release date."
+          "Anticipated impact of design changes and worked with design and product to design a solution while meeting the committed release date."
         ]
       },
       {
