@@ -1,48 +1,50 @@
 // @flow
-
-import React from 'react'
+import React from "react";
 
 type Props = {
   increaseFocusedMilestoneFn: () => void,
   selectNextTrackFn: () => void,
   decreaseFocusedMilestoneFn: () => void,
   selectPrevTrackFn: () => void
-}
+};
 
 class KeyboardListener extends React.Component<Props> {
   componentDidMount() {
-    window.addEventListener('keydown', (e) => this.handleKeyDown(e)) // TK unlisten
+    window.addEventListener("keydown", this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("keydown", this.handleKeyDown);
   }
 
   handleKeyDown(e: KeyboardEvent) {
-    if (document.activeElement && document.activeElement.tagName === 'INPUT') {
+    if (document.activeElement && document.activeElement.tagName === "INPUT") {
       // Don't do shortcuts while input has focus.
-      return
+      return;
     }
-    switch(e.code) {
-      case 'ArrowUp':
-        this.props.increaseFocusedMilestoneFn()
-        e.preventDefault()
-        break
-      case 'ArrowRight':
-        this.props.selectNextTrackFn()
-        e.preventDefault()
-        break
-      case 'ArrowDown':
-        this.props.decreaseFocusedMilestoneFn()
-        e.preventDefault()
-        break
-      case 'ArrowLeft':
-        this.props.selectPrevTrackFn()
-        e.preventDefault()
-        break
+    switch (e.code) {
+      case "ArrowUp":
+        this.props.increaseFocusedMilestoneFn();
+        e.preventDefault();
+        break;
+      case "ArrowRight":
+        this.props.selectNextTrackFn();
+        e.preventDefault();
+        break;
+      case "ArrowDown":
+        this.props.decreaseFocusedMilestoneFn();
+        e.preventDefault();
+        break;
+      case "ArrowLeft":
+        this.props.selectPrevTrackFn();
+        e.preventDefault();
+        break;
     }
   }
 
   render() {
-    return null
+    return null;
   }
-
 }
 
-export default KeyboardListener
+export default KeyboardListener;

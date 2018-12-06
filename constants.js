@@ -1,23 +1,24 @@
 // @flow
 import * as d3 from "d3";
+import { Track, COMMUNITY } from "./tracks";
 
 type Tracks = {|
-  "MOBILE": Track,
-  "WEB_CLIENT": Track,
+  MOBILE: Track,
+  WEB_CLIENT: Track,
   "FOUNDATIONS (PLATFORM)": Track,
   "SERVERS & API": Track,
-  "PROJECT_MANAGEMENT": Track,
-  "COMMUNICATION": Track,
-  "CRAFT": Track,
-  "INITIATIVE": Track,
-  "CAREER_DEVELOPMENT": Track,
-  "ORG_DESIGN": Track,
-  "WELLBEING": Track,
-  "ACCOMPLISHMENT": Track,
-  "MENTORSHIP": Track,
-  "EVANGELISM": Track,
-  "RECRUITING": Track,
-  "COMMUNITY": Track
+  PROJECT_MANAGEMENT: Track,
+  COMMUNICATION: Track,
+  CRAFT: Track,
+  INITIATIVE: Track,
+  CAREER_DEVELOPMENT: Track,
+  ORG_DESIGN: Track,
+  WELLBEING: Track,
+  ACCOMPLISHMENT: Track,
+  MENTORSHIP: Track,
+  EVANGELISM: Track,
+  RECRUITING: Track,
+  COMMUNITY: Track
 |};
 
 export type TrackId = $Keys<Tracks>;
@@ -25,7 +26,7 @@ export type Milestone = 0 | 1 | 2 | 3 | 4 | 5;
 
 export type NoteMap = {
   [TrackId]: ?string
-}
+};
 
 export type MilestoneMap = {
   [TrackId]: Milestone
@@ -71,18 +72,6 @@ export const pointsToLevels = {
 
 export const maxLevel = 135;
 
-export type Track = {
-  displayName: string,
-  category: string, // TK categoryId type?
-  summary: string,
-  description: string,
-  milestones: {
-    summary: string,
-    signals: string[],
-    examples: string[]
-  }[]
-};
-
 export const tracks: Tracks = {
   MOBILE: {
     displayName: "Mobile",
@@ -127,7 +116,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
+        summary:
+          "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
         signals: [
           "Pioneers architecture migration strategies that reduce programmer burden",
           "Fixes subtle memory management issues",
@@ -141,7 +131,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Is an industry-leading expert in mobile engineering or sets strategic mobile direction for an eng team",
+        summary:
+          "Is an industry-leading expert in mobile engineering or sets strategic mobile direction for an eng team",
         signals: [
           "Defines long-term goals and ensures active projects are in service of them",
           "Designs and builds innovative, industry-leading UI interactions"
@@ -193,13 +184,11 @@ export const tracks: Tracks = {
           "Performs systemic tasks to significantly minimise bundle size",
           "Acts a caretaker for all of web client code"
         ],
-        examples: [
-          "Researched utility of HTTP/2 for Vend",
-          "Designed and implemented Add/Edit Product screen"
-        ]
+        examples: ["Researched utility of HTTP/2 for Vend", "Designed and implemented Add/Edit Product screen"]
       },
       {
-        summary: "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
+        summary:
+          "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
         signals: [
           "Pioneers architecture migrations that reduce programmer burden",
           "Implements complex UI transitions that bring delight",
@@ -230,7 +219,8 @@ export const tracks: Tracks = {
   "FOUNDATIONS (PLATFORM)": {
     displayName: "Platform & Data",
     category: "A",
-    summary: "Develops expertise in foundational systems, such as deployments, pipelines, databases and machine learning",
+    summary:
+      "Develops expertise in foundational systems, such as deployments, pipelines, databases and machine learning",
     milestones: [
       {
         summary: "Works effectively within established structures, following current best practices",
@@ -252,9 +242,7 @@ export const tracks: Tracks = {
           "Creates re-usable components for developers",
           "Triages service issues correctly and independently"
         ],
-        examples: [
-          "Identified source of slow requests in a single service from the edge in"
-        ]
+        examples: ["Identified source of slow requests in a single service from the edge in"]
       },
       {
         summary: "Designs standalone systems of moderate complexity, or major new features in existing systems",
@@ -270,7 +258,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
+        summary:
+          "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
         signals: [
           "Designs complex projects that encompass multiple systems and technologies",
           "Demonstrates deep knowledge of foundational systems",
@@ -283,7 +272,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Is an industry-leading expert in foundational engineering or sets strategic foundational direction for an eng team",
+        summary:
+          "Is an industry-leading expert in foundational engineering or sets strategic foundational direction for an eng team",
         signals: [
           "Designs transformational projects in service of long-term goals",
           "Defines the strategic vision for foundational work and supporting technologies",
@@ -343,7 +333,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
+        summary:
+          "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
         signals: [
           "Delivers complex systems that achieve their goals",
           "Avoids subtle architectural mistakes when considering new systems",
@@ -356,7 +347,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Is an industry-leading expert in server side engineering or sets strategic server side direction for an eng team",
+        summary:
+          "Is an industry-leading expert in server side engineering or sets strategic server side direction for an eng team",
         signals: [
           "Designs transformational projects of significant complexity and scope",
           "Makes decisions that have positive, long term, wide ranging consequences",
@@ -417,7 +409,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Effectively delivers projects through a large team, or with a significant amount of stakeholders or complexity",
+        summary:
+          "Effectively delivers projects through a large team, or with a significant amount of stakeholders or complexity",
         signals: [
           "Finds ways to deliver requested scope faster, and prioritizes backlog",
           "Manages dependencies on other projects and teams",
@@ -452,7 +445,8 @@ export const tracks: Tracks = {
     description: "Great communication is central to everything we do at Vend, and without it, most non-trivial efforts would fail. Whether discussing approaches, giving presentations, listening attentively, or managing stakeholders, excellent communication is a key skill. The ability to communicate an idea, and to understand communicated ideas is of critical importance to ensure a well-aligned, agile team.",
     milestones: [
       {
-        summary: "Communicates effectively to close stakeholders when called upon, and incorporates constructive feedback",
+        summary:
+          "Communicates effectively to close stakeholders when called upon, and incorporates constructive feedback",
         signals: [
           "Communicates project status clearly and effectively",
           "Collaborates with others with empathy",
@@ -465,7 +459,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Communicates with the wider team appropriately, focusing on timeliness and good quality conversations",
+        summary:
+          "Communicates with the wider team appropriately, focusing on timeliness and good quality conversations",
         signals: [
           "Practises active listening and suspension of attention",
           "Ensures stakeholders are aware of current blockers",
@@ -478,7 +473,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Proactively shares information, actively solicits feedback, and facilitates communication for multiple stakeholders",
+        summary:
+          "Proactively shares information, actively solicits feedback, and facilitates communication for multiple stakeholders",
         signals: [
           "Resolves communication difficulties between others",
           "Anticipates and shares schedule deviations in plenty of time",
@@ -491,7 +487,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Communicates complex ideas skillfully and with nuance, and establishes alignment within the wider organization",
+        summary:
+          "Communicates complex ideas skillfully and with nuance, and establishes alignment within the wider organization",
         signals: [
           "Communicates project risk and tradeoffs skillfully and with nuance",
           "Contextualizes and clarifies ambiguous direction and strategy for others",
@@ -504,7 +501,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Influences outcomes at the highest level, moves beyond mere broadcasting, and sets best practices for others",
+        summary:
+          "Influences outcomes at the highest level, moves beyond mere broadcasting, and sets best practices for others",
         signals: [
           "Defines processes for clear communication for the entire team",
           "Shares the right amount of information with the right people, at the right time",
@@ -538,7 +536,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Increases the robustness and reliability of codebases, and devotes time to polishing products and systems",
+        summary:
+          "Increases the robustness and reliability of codebases, and devotes time to polishing products and systems",
         signals: [
           "Refactors existing code to make it more testable",
           "Adds tests for uncovered areas",
@@ -564,7 +563,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Advocates for and models great quality with proactive actions, and tackles difficult and subtle system issues",
+        summary:
+          "Advocates for and models great quality with proactive actions, and tackles difficult and subtle system issues",
         signals: [
           "Builds systems so as to eliminate entire classes of programmer error",
           "Focuses the team on quality with regular reminders",
@@ -576,7 +576,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Enables and encourages the entire organization to make quality a central part of the development process",
+        summary:
+          "Enables and encourages the entire organization to make quality a central part of the development process",
         signals: [
           "Defines policies for the engineering org that encourage quality work",
           "Identifies and eliminates single points of failure throughout the organization",
@@ -603,14 +604,11 @@ export const tracks: Tracks = {
           "Raises meaningful tensions in tactical meetings",
           "Asks leadership team insightful questions at AMA "
         ],
-        examples: [
-          "Wrote about problems with ECS on Confluence",
-          "",
-          "Reported a site issue in Github"
-        ]
+        examples: ["Wrote about problems with ECS on Confluence", "", "Reported a site issue in Github"]
       },
       {
-        summary: "Causes change to positively impact a few individuals or minor improvement to an existing product or service",
+        summary:
+          "Causes change to positively impact a few individuals or minor improvement to an existing product or service",
         signals: [
           "Picks bugs off the backlog proactively when blocked elsewhere",
           "Makes design quality improvements unprompted",
@@ -636,7 +634,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Effects change that has a substantial positive impact on the engineering organization or a major product impact",
+        summary:
+          "Effects change that has a substantial positive impact on the engineering organization or a major product impact",
         signals: [
           "Champions and pioneers new technologies to solve new classes of problem",
           "Exemplifies grit and determination in the face of persistent obstacles",
@@ -709,7 +708,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Manages interactions and processes between groups, promoting best practices and setting a positive example",
+        summary:
+          "Manages interactions and processes between groups, promoting best practices and setting a positive example",
         signals: [
           "Manages team transitions smoothly, respecting team and individual needs",
           "Develops best practices for conflict resolution",
@@ -722,7 +722,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Supports the development of a signficant part of the engineering org, and widely viewed as a trusted advisor",
+        summary:
+          "Supports the development of a signficant part of the engineering org, and widely viewed as a trusted advisor",
         signals: [
           "Supports and develops senior leaders",
           "Identified leadership training opportunities for senior leadership",
@@ -740,7 +741,8 @@ export const tracks: Tracks = {
   ORG_DESIGN: {
     displayName: "Org design",
     category: "C",
-    summary: "Defines processes and structures that enables the strong growth and execution of a diverse eng organization",
+    summary:
+      "Defines processes and structures that enables the strong growth and execution of a diverse eng organization",
     milestones: [
       {
         summary: "Respects and participates in processes, giving meaningful feedback to help the organization improve",
@@ -756,7 +758,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Identifies opportunities to improve existing processes and makes changes that positively affect the local team",
+        summary:
+          "Identifies opportunities to improve existing processes and makes changes that positively affect the local team",
         signals: [
           "Defines meeting structure and cadence that meets team needs",
           "Engages in organizational systems thinking",
@@ -868,7 +871,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Manages narratives, channels negativity into inspiration and motivation, and protects the entire team",
+        summary:
+          "Manages narratives, channels negativity into inspiration and motivation, and protects the entire team",
         signals: [
           "Recognizes and points out narratives when appropriate",
           "Works to reshape narratives from victimization to ownership",
@@ -886,7 +890,8 @@ export const tracks: Tracks = {
   ACCOMPLISHMENT: {
     displayName: "Accomplishment",
     category: "C",
-    summary: "Inspires day to day excellence, maximises potential and effectively resolves performance issues with compassion",
+    summary:
+      "Inspires day to day excellence, maximises potential and effectively resolves performance issues with compassion",
     milestones: [
       {
         summary: "Helps individuals identify blockers and helps them identify next steps for resolution",
@@ -959,10 +964,12 @@ export const tracks: Tracks = {
   MENTORSHIP: {
     displayName: "Mentorship",
     category: "D",
-    summary: "Provides support to colleagues, spreads knowledge, and develops the team outside formal reporting structures",
+    summary:
+      "Provides support to colleagues, spreads knowledge, and develops the team outside formal reporting structures",
     milestones: [
       {
-        summary: "Informally mentors individuals in an ad-hoc way, supports new hires, and conveys institutional knowledge",
+        summary:
+          "Informally mentors individuals in an ad-hoc way, supports new hires, and conveys institutional knowledge",
         signals: [
           "Makes themself available for informal support and advice",
           "Acts as sounding board for peers and more junior members",
@@ -1048,7 +1055,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Participates more centrally in small events, and takes simple actions that positively influence groups of people",
+        summary:
+          "Participates more centrally in small events, and takes simple actions that positively influence groups of people",
         signals: [
           "Takes meaningful action to introduce people to Vend",
           "Joined public Slack group and represented Vend appropriately, and well",
@@ -1121,7 +1129,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Interviews regularly, helps the team make meaningful hiring decisions, and helps build a diverse pipeline",
+        summary:
+          "Interviews regularly, helps the team make meaningful hiring decisions, and helps build a diverse pipeline",
         signals: [
           "Provides clear, objective feedback on candidates (we should have an interview rubric)",
           "Interviews candidates with empathy and treats them all with equal respect",
@@ -1134,7 +1143,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Maintains and strengthens the integrity of the current process, and/or regularly brings in great candidates",
+        summary:
+          "Maintains and strengthens the integrity of the current process, and/or regularly brings in great candidates",
         signals: [
           "Teaches new interviewers how to interview with empathy",
           "Models great interview technique and feedback when shadowed",
@@ -1147,7 +1157,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Actively contributes to and leads hiring decisions, and goes to great lengths to source great candidates",
+        summary:
+          "Actively contributes to and leads hiring decisions, and goes to great lengths to source great candidates",
         signals: [
           "Documents subtle cues in interviews that indicate values alignment",
           "Makes hiring decisions, resolving discrepancies between conflicting reports",
@@ -1160,7 +1171,8 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Sets recruitment strategy, invests in long-term relationships for critical roles, and recruits at scale",
+        summary:
+          "Sets recruitment strategy, invests in long-term relationships for critical roles, and recruits at scale",
         signals: [
           "Sets the tone, policy and goals around building a diverse, high-quality team",
           "Identifies and brings in promising acquisitions",
@@ -1178,23 +1190,28 @@ export const tracks: Tracks = {
   COMMUNITY: {
     displayName: "Community",
     category: "D",
-    summary: "Builds community internally, gives of themself to the team, and champions and extols company values",
+    summary: "Help build the community internally.",
+    description:
+      "Live and champion the company values within the team and across the company. Contribute to make our environment a better, more enjoyable and supportive place for everyone.",
     milestones: [
       {
-        summary: "Is available and present on current teams, and works to contribute positively to company culture",
+        summary: "Is available and active in the team and contribute positively to the company culture",
         signals: [
-          "Participates in team activities and offsites",
           "Treats colleagues and clients with respect",
-          "Joins groups or committees outside regular duties"
+          "Participates in team activities and events",
+          "Joins and participates in internal groups or initiatives"
         ],
         examples: [
-          "Joined and actively participated in the Frontend platform group",
+          "Joined and actively participated in the Frontend community group",
           "Brought a small gift back from vacation for the team",
+          "Constantly celebrated the team achievements",
+          "Participated meaningfully in the team meetings",
+          "Paired up with other developers to help them learn or unblock a situation",
           "Wrote entertaining and informative incident review updates on Confluence"
         ]
       },
       {
-        summary: "Steps up, builds connectedness, and takes concrete actions to promote an inclusive culture",
+        summary: "Steps up, takes concrete actions to promote a positive and inclusive culture",
         signals: [
           "Makes space for others to participate",
           "Collaborates with other engineers outside direct responsibilities",
@@ -1202,8 +1219,12 @@ export const tracks: Tracks = {
         ],
         examples: [
           "Created Fuck Yeah Fridays",
-          "Brought shy and introverted people into a dominant conversation",
-          ""
+          "Made sure to engage/include the quieter members of the team in discussions",
+          "Helped document the current project on Confluence",
+          "Proposes and run a regular walking lunch event",
+          "Created and leads a regular Yoga session in the office",
+          "Helped onboarding and setup a new graduate in the team",
+          "Regularly encouraged and celebrated my team mates achievement publicly"
         ]
       },
       {
@@ -1216,33 +1237,46 @@ export const tracks: Tracks = {
         examples: [
           "Handles on-call with little support while still contributing to projects",
           "Started and drove the diversity and ally skills training",
-          "Stayed positive and improved team morale during period after layoffs"
+          "Stayed positive and improved team morale during period after layoffs",
+          "Helped another team move forward with their work by sharing knowledge/pairing...",
+          "Constantly enabled others as the specialist in Go",
+          "Raised up and clearly communicated risks and impediments on behalf of another team member",
+          "Helped improve the team culture by creating a team specific tradition"
         ]
       },
       {
         summary: "Exemplifies selflessness for the team without compromising responsibilities, and lifts everyone up",
         signals: [
-          "Goes above and beyond on the Watch, serving the team without complaint",
-          "Implements concrete programs to signficantly improve team inclusivity",
+          "Goes above and beyond on the Watch, selflessly serving the team",
+          "Implements concrete programs to significantly improve team inclusion",
           "Takes on large amounts of tedious grunt work for the team without being asked"
         ],
         examples: [
-          "Devoted large amount of time to helping outside direct responsibilities",
+          "Took on setting up tooling for the project the team is working on",
           "Refactored a multitude of legacy PHP issues",
-          "Acted as sole maintainer of Jenkins for years"
+          "Created an automated testing pipeline for the team project",
+          "Acted as sole maintainer of Jenkins for years",
+          "Created and applied a team onboarding programme for newcomers",
+          "Ran training sessions on React for the entire team",
+          "Improved our team development experience by introducing a static analyser tool",
+          "Constantly shared credit and promoted individuals from the team"
         ]
       },
       {
-        summary: "Lives the company values, guards positive culture, and defines policies that support relatedness between teams",
+        summary:
+          "Lives the company values, guards positive culture, and helps define policies that support relatedness between teams",
         signals: [
           "Brings separate teams together to build relatedness",
           "Holds individuals, teams, and leadership accountable to Vend's values",
           "Sets the tone, policy, and goals around maintaining an inclusive company"
         ],
         examples: [
-          "Organized summer BBQ for the whole engineering org",
-          "Devised, delivered and acted on findings from a CultureAmp survey",
-          "Challenged and corrected exclusionary behaviour or policies"
+          "Organized summer BBQ for the whole engineering group",
+          "Devised, delivered and acted on findings from an engagement survey",
+          "Challenged and corrected exclusionary behaviour or policies",
+          "Organised cross-team events to help mix and match people",
+          "Set up a regular event for the whole office to share achievements, failures and learnings",
+          "Created and led a cross-team engineer rotation and immersion programme"
         ]
       }
     ]
@@ -1262,10 +1296,7 @@ export const categoryPointsFromMilestoneMap = (milestoneMap: MilestoneMap) => {
     const milestone = milestoneMap[trackId];
     const categoryId = tracks[trackId].category;
     let currentPoints = pointsByCategory.get(categoryId) || 0;
-    pointsByCategory.set(
-      categoryId,
-      currentPoints + milestoneToPoints(milestone)
-    );
+    pointsByCategory.set(categoryId, currentPoints + milestoneToPoints(milestone));
   });
   return Array.from(categoryIds.values()).map(categoryId => {
     const points = pointsByCategory.get(categoryId);
@@ -1273,12 +1304,8 @@ export const categoryPointsFromMilestoneMap = (milestoneMap: MilestoneMap) => {
   });
 };
 
-export const totalPointsFromMilestoneMap = (
-  milestoneMap: MilestoneMap
-): number =>
-  trackIds
-    .map(trackId => milestoneToPoints(milestoneMap[trackId]))
-    .reduce((sum, addend) => sum + addend, 0);
+export const totalPointsFromMilestoneMap = (milestoneMap: MilestoneMap): number =>
+  trackIds.map(trackId => milestoneToPoints(milestoneMap[trackId])).reduce((sum, addend) => sum + addend, 0);
 
 export const categoryColorScale = d3
   .scaleOrdinal()
