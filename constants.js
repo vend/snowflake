@@ -479,7 +479,7 @@ export const tracks: Tracks = {
         examples: [
           "Received and integrated critical feedback positively",
           "Created cross-team Slack channel for payments work",
-          "Spoke to domain experts before writing spec",
+          "Collaborated with domain experts before writing spec",
           "Proactively recorded decisions in the project decision log after a meeting"
         ]
       },
