@@ -1106,6 +1106,7 @@ export const tracks: Tracks = {
   RECRUITING: {
     displayName: "Recruiting",
     category: "D",
+    description: "Recruiting is one of the most important things that we do as an organisation. We need engineers to bring candidates into the pipeline, think about how we build a diverse team that covers our blindspots, evaluate candidates purely on the criteria that we deem important, and ensure that we only bring in new people that believe in our company values."
     summary: "Strengthens Vend's team by bringing in excellent staff members",
     milestones: [
       {
@@ -1125,6 +1126,7 @@ export const tracks: Tracks = {
         summary: "Interviews regularly, helps the team make meaningful hiring decisions, and helps build a diverse pipeline",
         signals: [
           "Consistently provides clear, objective feedback on candidates",
+          "Interviews candidates with empathy and treats them all with equal respect",
           "Researches approaches for sourcing candidates and diversifying hiring"
         ],
         examples: [
