@@ -1135,8 +1135,8 @@ export const tracks: Tracks = {
         examples: [
           "Added observable evidence for interview feedback on different occasions",
           "Started a monthly brunch for candidates to meet Vend employees",
-          "Helped to triage job applications from the talent pool.",
-          "Conducted practical tests for interview candidates. "
+          "Helped to triage job applications from the talent pool",
+          "Conducted practical tests for interview candidates"
         ]
       },
       {
@@ -1163,7 +1163,7 @@ export const tracks: Tracks = {
         examples: [
           "Planned engineering summit on interview process and training",
           "Organized and lead Vend's presence at a recruitment fair",
-          "Created new practical test(s) to test the technical capabilities of interview candidates.",
+          "Created new practical test(s) to test the technical capabilities of interview candidates",
           "Started internship program"
         ]
       },
