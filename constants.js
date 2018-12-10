@@ -890,6 +890,7 @@ export const tracks: Tracks = {
     displayName: "Accomplishment",
     category: "C",
     summary: "Inspires day to day excellence, maximises potential and effectively resolves performance issues with compassion",
+    description: "We need leaders who can tactically unblock engineers who are struggling, and can work with them to understand, contextualise, and resolve root causes. We also need people who can resolve higher level organisational dysfunction when it occurs and get teams back on track.",
     milestones: [
       {
         summary: "Helps individuals identify blockers and helps them identify next steps for resolution",
@@ -900,6 +901,7 @@ export const tracks: Tracks = {
         ],
         examples: [
           "Completed training on diagnosing problems",
+          "During sprint planning proactively identify blockers/impediments and help clear them out",
           "Unblocked a group member",
           "Reinforces and affirms positive feedback for good work"
         ]
@@ -914,6 +916,7 @@ export const tracks: Tracks = {
         examples: [
           "Completed training on decision making",
           "Convinced a team member to solve a problem directly, rather than doing it for them",
+          "Organised postmortems with team members to identify things that could be improved or done better to fix long standing issues",
           "Gave honest feedback about poor performance, with compassion"
         ]
       },
