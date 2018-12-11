@@ -907,14 +907,15 @@ export const tracks: Tracks = {
         ]
       },
       {
-        summary: "Helps individuals resolve difficult performance issues, with insight, compassion, and skill",
+        summary: "Helps individuals elevate their level of performance and accomplishment, with insight, compassion, and skill",
         signals: [
           "Gathers context outside the immediate problem",
           "Recognizes issues within local environment and suggests change",
           "Works to encourage ownership of actions and responsibilities"
         ],
         examples: [
-          "Completed training on decision making",
+          "Helped invididual to become aware of ways to be more effective",
+          "Helped others to develop decision making methodology",
           "Convinced a team member to solve a problem directly, rather than doing it for them",
           "Organised postmortems with team members to identify things that could be improved or done better to fix long standing issues",
           "Gave honest feedback about poor performance, with compassion"
