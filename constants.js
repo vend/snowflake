@@ -1193,7 +1193,7 @@ export const tracks: Tracks = {
     category: "D",
     summary: "Help build the community internally.",
     description:
-      "Live and champion the company values within the team and across the company. Contribute to make our environment a better, more enjoyable and supportive place for everyone.",
+      "Vend needs engineers that live and champion our values in their team and across the company. We look for contributions that make our environment a better, more enjoyable and supportive place for everyone.",
     milestones: [
       {
         summary: "Is available and active in the team and contribute positively to the company culture",
