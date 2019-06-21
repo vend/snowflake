@@ -398,10 +398,10 @@ export const tracks: Tracks = {
         signals: [
           "Estimates small tasks accurately",
           "Delivers tightly-scoped projects efficiently",
-          "Writes effective technical specs outlining approach"
+          "Ensures stakeholders are aware of current blockers"
         ],
         examples: [
-          "Wrote the technical spec for Quick User Switching",
+          "Effectively estimated assigned Jira tickets for Quick User Switching",
           "Delivered low stock warning for iOS",
           "Delivered new User badge"
         ]
@@ -415,8 +415,10 @@ export const tracks: Tracks = {
         ],
         examples: [
           "Delivered basic promotions API endpoint",
-          "Delivered new View Customer design",
-          "Executed the multiple image uploader for products"
+          "Scoped Jira tickets to be dev ready before Sprint Planning",
+          "Worked with Product Marketing to communicate roll out while delivering new View Customer design",
+          "Executed the multiple image uploader for products",
+          "Broke down Home Dashboard Integrated Payment Recommendations into tickets with estimations"
         ]
       },
       {
@@ -429,7 +431,8 @@ export const tracks: Tracks = {
         examples: [
           "Ran project retro to assess improvement opportunities",
           "Completed launch checklist unprompted for well controlled rollout",
-          "Facilitated project kickoff meeting to get buy-in"
+          "Facilitated project kickoff meeting to get buy-in",
+          "Worked with Marketing to define scope and delivery timelines for Crafty CMS"
         ]
       },
       {
@@ -441,8 +444,8 @@ export const tracks: Tracks = {
         ],
         examples: [
           "Oversaw delivery of Promotions",
-          "Built the features service",
-          "Involved marketing, legal, and appropriate functions at project start"
+          "Managed the building of the features service",
+          "Co-ordinated the different requirements of marketing, legal, and appropriate functions throughout the GDPR project"
         ]
       },
       {
@@ -470,9 +473,11 @@ export const tracks: Tracks = {
       {
         summary: "Communicates effectively to close stakeholders when called upon, and incorporates constructive feedback",
         signals: [
-          "Communicates project status clearly and effectively",
+          "Communicates status of assigned tasks clearly and effectively",
           "Collaborates with others with empathy",
-          "Asks for help at the appropriate juncture"
+          "Asks for help at the appropriate juncture",
+          "Practises active listening and suspension of attention",
+          "Provides the appropriate amount of information and technical detail based on parties being comunicated with"
         ],
         examples: [
           "Updated oncall-engineers before running a resource-intensive task.",
@@ -483,14 +488,15 @@ export const tracks: Tracks = {
       {
         summary: "Communicates with the wider team appropriately, focusing on timeliness and good quality conversations",
         signals: [
-          "Practises active listening and suspension of attention",
-          "Ensures stakeholders are aware of current blockers",
-          "Chooses the appropriate tools for accurate and timely communication"
+          "Chooses the appropriate tools for accurate and timely communication",
+          "Writes effective technical specs outlining approach",
+          "Identifies and proactively involves the appropriate people to reach a consensus on a technical decision"
         ],
         examples: [
           "Received and integrated critical feedback positively",
           "Created cross-team Slack channel for payments work",
-          "Spoke to domain experts before writing spec"
+          "Collaborated with domain experts before writing spec",
+          "Proactively recorded decisions in the project decision log after a meeting"
         ]
       },
       {
@@ -498,12 +504,13 @@ export const tracks: Tracks = {
         signals: [
           "Resolves communication difficulties between others",
           "Anticipates and shares schedule deviations in plenty of time",
-          "Manages project stakeholder expectations effectively"
+          "Manages project stakeholder expectations across teams effectively"
         ],
         examples: [
           "Directed team response effectively during outages",
           "Gathered multiple stakeholders together to communicate a priority change",
-          "Gave notice of upcoming related work in Band Practise"
+          "Gave notice of upcoming related work in Band Practise",
+          "Anticipated impact of design changes and worked with design and product to design a solution while meeting the committed release date."
         ]
       },
       {
