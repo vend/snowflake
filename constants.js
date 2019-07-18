@@ -1308,13 +1308,9 @@ export const categoryColorScale = d3
 
 export const titles = [
   { label: "Engineer I", minPoints: 0, maxPoints: 16 },
-  { label: "Associate Engineer", minPoints: 0, maxPoints: 16 },
   { label: "Engineer II", minPoints: 17, maxPoints: 35 },
-  { label: "Engineer", minPoints: 17, maxPoints: 35 },
   { label: "Engineer III", minPoints: 36, maxPoints: 57 },
-  { label: "Senior Engineer", minPoints: 36, maxPoints: 57 },
   { label: "Engineer IV", minPoints: 58, maxPoints: 89 },
-  { label: "Principal Engineer", minPoints: 58, maxPoints: 89 },
   { label: "Engineer V", minPoints: 90 }
 ];
 
