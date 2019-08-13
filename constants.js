@@ -1126,10 +1126,11 @@ export const tracks: Tracks = {
   RECRUITING: {
     displayName: "Recruiting",
     category: "D",
+    description: "Recruiting is one of the most important things that we do as an organisation. We need engineers to bring candidates into the pipeline, think about how we build a diverse team that covers our blindspots, evaluate candidates purely on the criteria that we deem important, and ensure that we only bring in new people that believe in our company values."
     summary: "Strengthens Vend's team by bringing in excellent staff members",
     milestones: [
       {
-        summary: "Brings new candidates into the pipeline and/or understands how to evaluate candidates at Vend",
+        summary: "Brings new candidates into the pipeline and understands how to evaluate candidates at Vend (https://bit.ly/2KW3n86)",
         signals: [
           "Reviews existing network for hiring leads regularly",
           "Shadows interviews to gain familiarity with process",
@@ -1144,14 +1145,15 @@ export const tracks: Tracks = {
       {
         summary: "Interviews regularly, helps the team make meaningful hiring decisions, and helps build a diverse pipeline",
         signals: [
-          "Provides clear, objective feedback on candidates (we should have an interview rubric)",
+          "Consistently provides clear, objective feedback on candidates",
           "Interviews candidates with empathy and treats them all with equal respect",
           "Researches approaches for sourcing candidates and diversifying hiring"
         ],
         examples: [
-          "Added observable evidence for interview feedback",
+          "Added observable evidence for interview feedback on different occasions",
           "Started a monthly brunch for candidates to meet Vend employees",
-          ""
+          "Helped to triage job applications from the talent pool",
+          "Conducted practical tests for interview candidates"
         ]
       },
       {
@@ -1164,6 +1166,7 @@ export const tracks: Tracks = {
         examples: [
           "Wrote fantastic new interview questions that are measurable and insightful",
           "Brought candidates into our pipeline proactively, with a high conversion rate",
+          "Improved practical tests with new tests and/or questions",
           "Proposed useful, tangible improvements to the interview process"
         ]
       },
@@ -1177,6 +1180,7 @@ export const tracks: Tracks = {
         examples: [
           "Planned engineering summit on interview process and training",
           "Organized and lead Vend's presence at a recruitment fair",
+          "Created new practical test(s) to test the technical capabilities of interview candidates",
           "Started internship program"
         ]
       },
