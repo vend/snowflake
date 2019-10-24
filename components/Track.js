@@ -89,13 +89,6 @@ class Track extends React.Component<Props> {
             </div>
           ) : null}
         </div>
-        <div style={{display: 'flex'}}>
-          <textarea
-            style={{flex: 1}}
-            rows='10'
-            value={currentNotes}
-            onChange={e => this.props.handleTrackNoteChangeFn(this.props.trackId, e.currentTarget.value)} />
-        </div>
       </div>
     )
   }
