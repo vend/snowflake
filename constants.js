@@ -215,8 +215,8 @@ export const tracks: Tracks = {
           "Provides useful design feedback and suggests feasible alternatives",
           "Performs systemic tasks to significantly minimise bundle size",
           "Acts a caretaker for all of web client code",
-          "**Makes significant improvements to the existing automation test framework for the web application",
-          "**Creates and implements the efficient test strategy for a complex new feature of the web application"
+          "Makes significant improvements to the existing automation test framework for the web application",
+          "Creates and implements the efficient test strategy for a complex new feature of the web application"
         ],
         examples: [
           "Researched utility of HTTP/2 for Vend",
