@@ -96,13 +96,13 @@ export const tracks: Tracks = {
           "Delivers features requiring simple local modifications",
           "Adds simple actions that call server endpoints",
           "Reuses existing components appropriately",
-          "Executes the existing test cases (automated or manual) for mobile application",
-          "Creates simple test cases (automated or manual) for mobile application"
+          "Executes the existing test cases (automated or manual) for mobile applications",
+          "Creates simple test cases (automated or manual) for mobile applications"
         ],
         examples: [
           "Added existing button to a different iOS surface",
           "Fetched and displayed a new stream, using existing stream item styles",
-          "Ran the automation test suite and/or manual regression for VendRegister",
+          "Ran the automation test suite and/or a manual regression for VendRegister",
           "Added a negative test based on the developer's tests for the Gift Card validation feature to extend the test coverage"
         ]
       },
@@ -112,15 +112,15 @@ export const tracks: Tracks = {
           "Defines new useful and appropriate proto-generated objects",
           "Migrates code from old patterns to new patterns",
           "Adds simple components to iOS Houston",
-          "Creates comprehensive test suites (not just single test) and makes minor improvements to the existing framework for mobile application",
-          "Knows and can use the appropriate tools to debug a problem in the mobile application and provides useful info to developers"
+          "Creates comprehensive test suites (not just a single test) and makes minor improvements to the existing framework for mobile applications",
+          "Knows and can use the appropriate tools to debug a problem in the mobile application and provides useful information to developers"
         ],
         examples: [
           "Added support for a new type of promotion",
           "Prototyped a simple new feature quickly",
           "Created a whole test suite (automated or manual) and did basic exploratory testing for a new feature of VendRegister",
           "Investigated and updated a failing automated test for VendRegister",
-          "Used Xcode and Charles to correctly identify the underlying problem of a VendRegister bug and helped developer fixed the bug more efficiently"
+          "Used Xcode and Charles to correctly identify the underlying problem of a VendRegister bug and helped the developer fix the bug more efficiently"
         ]
       },
       {
@@ -129,15 +129,15 @@ export const tracks: Tracks = {
           "Implements complex features with a large product surface area",
           "Adds support for new iOS features after a major iOS version upgrade",
           "Adds complex components to iOS Houston",
-          "Makes significant improvements to the existing automation test framework for the mobile application",
-          "Creates and implements the efficient test strategy for a complex new feature of the mobile application"
+          "Makes significant improvements to the existing automation test framework for a mobile application",
+          "Creates and implements an efficient test strategy for a complex new feature of a mobile application"
         ],
         examples: [
           "Designed iOS caching strategy for product search",
           "Informed the team about recent best practice changes and deprecations",
-          "Refactored the automation test framework for VendRegister to improve the tests execution efficiency",
+          "Refactored the automation test framework for VendRegister to improve the test execution efficiency",
           "Wrote helper classes to improve code readability and maintainability for VendRegister",
-          "Created and implemented the test strategy, test scenarios/cases and did thorough exploratory testing for the Promotions new feature for VendRegister"
+          "Created and implemented the test strategy, test scenarios/cases and did thorough exploratory testing for the new Promotions feature in VendRegister"
         ]
       },
       {
@@ -197,8 +197,8 @@ export const tracks: Tracks = {
           "Makes sensible abstractions based on template and code patterns",
           "Specs and builds interactive components independently",
           "Prototypes simple new features quickly",
-          "Creates comprehensive test suites (not just single test) and makes minor improvements to the existing framework for web application",
-          "Knows and can use the appropriate tools to debug a problem in the web application and provides useful info to developers"
+          "Creates comprehensive test suites (not just a single test) and makes minor improvements to existing frameworks for a web application",
+          "Knows and can use the appropriate tools to debug a problem in a web application and provides useful information to developers"
         ],
         examples: [
           "Built dropdown component in Houston",
@@ -206,7 +206,7 @@ export const tracks: Tracks = {
           "Rebuilt an existing page to use Houston",
           "Created a whole test suite (automated or manual) and did basic exploratory testing for a new feature of WebRegister",
           "Investigated and updated a failing automated test for WebRegister",
-          "Used Chrome developer tool and Charles to correctly identify the underlying problem of a WebRegister bug and helped developer fixed it more efficiently"
+          "Used Chrome developer tool and Charles to correctly identify the underlying problem of a WebRegister bug and helped the developer fixed it more efficiently"
         ]
       },
       {
@@ -215,8 +215,8 @@ export const tracks: Tracks = {
           "Provides useful design feedback and suggests feasible alternatives",
           "Performs systemic tasks to significantly minimise bundle size",
           "Acts a caretaker for all of web client code",
-          "Makes significant improvements to the existing automation test framework for the web application",
-          "Creates and implements the efficient test strategy for a complex new feature of the web application"
+          "Makes significant improvements to the existing automation test framework for a web application",
+          "Creates and implements the efficient test strategy for a complex new feature of a web application"
         ],
         examples: [
           "Researched utility of HTTP/2 for Vend",
@@ -224,7 +224,7 @@ export const tracks: Tracks = {
           "Created shared datepicker component in Houston",
           "Refactored the automation test framework for WebRegister to improve the tests execution efficiency",
           "Wrote helper classes to improve code readability and maintainability for WebRegister",
-          "Created and implemented the test strategy, test scenarios/cases and did thorough exploratory testing for the Promotions new feature for WebRegister"
+          "Created and implemented the test strategy, test scenarios/cases and did thorough exploratory testing for the new Promotions feature in WebRegister"
         ]
       },
       {
@@ -394,9 +394,9 @@ export const tracks: Tracks = {
           "Re-work reporting to use date-based indexes",
           "Implemented promotions service",
           "Built Xendo consumer",
-          "Setup API automation test framework based on Cypress for Xendo",
-          "Helped the developer added sufficient unit tests for the Sale Tax Component new feature of Hustle to improve the test coverage and saved effort on end-to-end test",
-          "Created and implemented the test strategy, test scenarios/cases and did thorough exploratory testing for the Sale Tax Component new feature for Hustleact"
+          "Setup a API automation test framework based on Cypress for Xendo",
+          "Helped the developer added sufficient unit tests for the new Sale Tax Component feature of Hustle in order to improve the test coverage and saved effort on end-to-end testing",
+          "Created and implemented the test strategy, test scenarios/cases and did thorough exploratory testing for the new Sale Tax Component feature for Hustle"
         ]
       },
       {
@@ -621,8 +621,8 @@ export const tracks: Tracks = {
           "Improved build pipeline to run the same volume of tests faster",
           "Improved dev container build speed and moved all containers from Quay to ECR",
           "Created a shared library after seeing multiple projects doing the same thing ",
-          "Utilised QA mindset to flag risks on early stage",
-          "Gave QA mindset trainings/knowlege sharing sessions to the team"
+          "Utilised QA mindset to flag risks at an early stage",
+          "Ran QA mindset training/knowlege sharing sessions for the team"
         ]
       },
       {
