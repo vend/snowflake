@@ -95,11 +95,15 @@ export const tracks: Tracks = {
         signals: [
           "Delivers features requiring simple local modifications",
           "Adds simple actions that call server endpoints",
-          "Reuses existing components appropriately"
+          "Reuses existing components appropriately",
+          "Executes the existing test cases (automated or manual) for mobile applications",
+          "Creates simple test cases (automated or manual) for mobile applications"
         ],
         examples: [
           "Added existing button to a different iOS surface",
-          "Fetched and displayed a new stream, using existing stream item styles"
+          "Fetched and displayed a new stream, using existing stream item styles",
+          "Ran the automation test suite and/or a manual regression for VendRegister",
+          "Added a negative test based on the developer's tests for the Gift Card validation feature to extend the test coverage"
         ]
       },
       {
@@ -107,11 +111,16 @@ export const tracks: Tracks = {
         signals: [
           "Defines new useful and appropriate proto-generated objects",
           "Migrates code from old patterns to new patterns",
-          "Adds simple components to iOS Houston"
+          "Adds simple components to iOS Houston",
+          "Creates comprehensive test suites (not just a single test) and makes minor improvements to the existing framework for mobile applications",
+          "Knows and can use the appropriate tools to debug a problem in the mobile application and provides useful information to developers"
         ],
         examples: [
           "Added support for a new type of promotion",
-          "Prototyped a simple new feature quickly"
+          "Prototyped a simple new feature quickly",
+          "Created a whole test suite (automated or manual) and did basic exploratory testing for a new feature of VendRegister",
+          "Investigated and updated a failing automated test for VendRegister",
+          "Used Xcode and Charles to correctly identify the underlying problem of a VendRegister bug and helped the developer fix the bug more efficiently"
         ]
       },
       {
@@ -119,11 +128,16 @@ export const tracks: Tracks = {
         signals: [
           "Implements complex features with a large product surface area",
           "Adds support for new iOS features after a major iOS version upgrade",
-          "Adds complex components to iOS Houston"
+          "Adds complex components to iOS Houston",
+          "Makes significant improvements to the existing automation test framework for a mobile application",
+          "Creates and implements an efficient test strategy for a complex new feature of a mobile application"
         ],
         examples: [
           "Designed iOS caching strategy for product search",
-          "Informed the team about recent best practice changes and deprecations"
+          "Informed the team about recent best practice changes and deprecations",
+          "Refactored the automation test framework for VendRegister to improve the test execution efficiency",
+          "Wrote helper classes to improve code readability and maintainability for VendRegister",
+          "Created and implemented the test strategy, test scenarios/cases and did thorough exploratory testing for the new Promotions feature in VendRegister"
         ]
       },
       {
@@ -165,12 +179,16 @@ export const tracks: Tracks = {
         signals: [
           "Makes minor modifications to existing screens",
           "Fixes simple design quality issues",
-          "Uses CSS appropriately, following style guide"
+          "Uses CSS appropriately, following style guide",
+          "Executes the existing test cases for web application (automated or manual)",
+          "Creates simple test cases (automated or manual) for web application"
         ],
         examples: [
           "Implemented new Houston confirmation banner in the Monoliph",
           "Hooked up the action to dismiss a card from the dashboard",
-          "Reskinned customer list using the existing customer badge"
+          "Reskinned customer list using the existing customer badge",
+          "Ran the automation test suite and/or manual regression for WebRegister",
+          "Added a negative test based on the developer's tests for the Gift Card validation feature to extend the test coverage"
         ]
       },
       {
@@ -178,12 +196,17 @@ export const tracks: Tracks = {
         signals: [
           "Makes sensible abstractions based on template and code patterns",
           "Specs and builds interactive components independently",
-          "Prototypes simple new features quickly"
+          "Prototypes simple new features quickly",
+          "Creates comprehensive test suites (not just a single test) and makes minor improvements to existing frameworks for a web application",
+          "Knows and can use the appropriate tools to debug a problem in a web application and provides useful information to developers"
         ],
         examples: [
           "Built dropdown component in Houston",
           "Rewrote Houston next-stepper to use multiple transclusion rather than binding",
-          "Rebuilt an existing page to use Houston"
+          "Rebuilt an existing page to use Houston",
+          "Created a whole test suite (automated or manual) and did basic exploratory testing for a new feature of WebRegister",
+          "Investigated and updated a failing automated test for WebRegister",
+          "Used Chrome developer tool and Charles to correctly identify the underlying problem of a WebRegister bug and helped the developer fixed it more efficiently"
         ]
       },
       {
@@ -191,12 +214,17 @@ export const tracks: Tracks = {
         signals: [
           "Provides useful design feedback and suggests feasible alternatives",
           "Performs systemic tasks to significantly minimise bundle size",
-          "Acts a caretaker for all of web client code"
+          "Acts a caretaker for all of web client code",
+          "Makes significant improvements to the existing automation test framework for a web application",
+          "Creates and implements the efficient test strategy for a complex new feature of a web application"
         ],
         examples: [
           "Researched utility of HTTP/2 for Vend",
           "Designed and implemented Add/Edit Product screen",
-          "Created shared datepicker component in Houston"
+          "Created shared datepicker component in Houston",
+          "Refactored the automation test framework for WebRegister to improve the tests execution efficiency",
+          "Wrote helper classes to improve code readability and maintainability for WebRegister",
+          "Created and implemented the test strategy, test scenarios/cases and did thorough exploratory testing for the new Promotions feature in WebRegister"
         ]
       },
       {
@@ -238,7 +266,7 @@ export const tracks: Tracks = {
         summary: "Works effectively within established structures, following current best practices",
         signals: [
           "Makes simple configuration changes to services",
-          "Knows how to search logs in our logging infrastructure"
+          "Knows how to search logs in our logging infrastructure",
           "Is on level 1 on-call and is able to independently do the initial alerts triage"
         ],
         examples: [
@@ -320,12 +348,16 @@ export const tracks: Tracks = {
         signals: [
           "Adds PHP endpoints using Symfony",
           "Adds Go endpoints to a service",
-          "Makes minor server changes to support client needs"
+          "Makes minor server changes to support client needs",
+          "Executes the existing test cases (automated or manual) for Services & APIs",
+          "Creates simple test cases (automated or manual) for Services & APIs"
         ],
         examples: [
           "Fixed a small bug in the monoliph Shopify API client",
           "Created a backend tool to version entities",
-          "Wrote a MySQL query that made good use of indexes"
+          "Wrote a MySQL query that made good use of indexes",
+          "Used Postman to execute existing tests for the Promotions APIs",
+          "Added a negative test based on the developer's tests for the Reports API to extend the test coverage"
         ]
       },
       {
@@ -333,7 +365,9 @@ export const tracks: Tracks = {
         signals: [
           "Assesses correctness and utility of existing code and avoids blind copy-pasting",
           "Generalizes code when appropriate",
-          "Determines data needs from product requirements"
+          "Determines data needs from product requirements",
+          "Creates comprehensive test suites (not just single test) and makes minor improvements to the existing framework for Services & APIs",
+          "Knows and can use the appropriate tools to debug a problem in the Services & APIs and provides useful info to developers"
         ],
         examples: [
           "Identified need for a new index in MySQL database",
@@ -341,7 +375,9 @@ export const tracks: Tracks = {
           "Added a new report type to the reporting service",
           "Implemented data cleanup functionality in a service",
           "Refactored a service to make fewer external API calls",
-          "Added versioning to a previously non versioned entity"
+          "Added versioning to a previously non versioned entity",
+          "Created a whole test suite (automated or manual) and did basic exploratory testing for Hustle (Sales processing service)",
+          "Used Postman and Charles to correctly identify the underlying problem of a Promotions API bug and helped developer fixed it more efficiently"
         ]
       },
       {
@@ -349,12 +385,18 @@ export const tracks: Tracks = {
         signals: [
           "Acts as primary maintainer for existing critical systems",
           "Integrates third party services effectively",
-          "Writes playbooks for new service maintenance"
+          "Writes playbooks for new service maintenance",
+          "Creates new automation test framework or makes significant improvements to the existing one for the Services & APIs",
+          "Supports and guides the development team from the QA prospective to ensure the efficient API testing from the beginning (from unit test to end-to-end test)",
+          "Creates and implements the efficient test strategy for a complex new feature of the Services & APIs"
         ],
         examples: [
           "Re-work reporting to use date-based indexes",
           "Implemented promotions service",
-          "Built Xendo consumer"
+          "Built Xendo consumer",
+          "Setup a API automation test framework based on Cypress for Xendo",
+          "Helped the developer added sufficient unit tests for the new Sale Tax Component feature of Hustle in order to improve the test coverage and saved effort on end-to-end testing",
+          "Created and implemented the test strategy, test scenarios/cases and did thorough exploratory testing for the new Sale Tax Component feature for Hustle"
         ]
       },
       {
@@ -571,12 +613,16 @@ export const tracks: Tracks = {
         signals: [
           "Implements systems that enable better testing",
           "Gives thoughtful code reviews as a domain expert",
-          "Adds tooling to improve code quality"
+          "Adds tooling to improve code quality",
+          "Implements systems/processes that enable the team to test early and test often",
+          "Educates the team about testing and makes sure the team develops with testing in mind"
         ],
         examples: [
           "Improved build pipeline to run the same volume of tests faster",
           "Improved dev container build speed and moved all containers from Quay to ECR",
-          "Created a shared library after seeing multiple projects doing the same thing "
+          "Created a shared library after seeing multiple projects doing the same thing ",
+          "Utilised QA mindset to flag risks at an early stage",
+          "Ran QA mindset training/knowlege sharing sessions for the team"
         ]
       },
       {
@@ -584,11 +630,13 @@ export const tracks: Tracks = {
         signals: [
           "Builds systems so as to eliminate entire classes of programmer error",
           "Focuses the team on quality with regular reminders",
-          "Coordinates support team ticket volume meetings and prioritises findings"
+          "Coordinates support team ticket volume meetings and prioritises findings",
+          "Acts as the Quality coach and Continuous Improvement advocate across Vend"
         ],
         examples: [
           "Implemented a strategy to attack flakey build pipelines",
-          "Defined and oversaw plan for closing Heartbleed vulnerability"
+          "Defined and oversaw plan for closing Heartbleed vulnerability",
+          "Expanded testing abilities and knowhow across the engineering teams, eventually reduced the need for QA testing effort"
         ]
       },
       {
@@ -820,7 +868,7 @@ export const tracks: Tracks = {
         ],
         examples: [
           "Lead efforts to increase investment in Engineering",
-          "Created the structure for a globally distributed engineering team"
+          "Created the structure for a globally distributed engineering team",
           "Built a compensation framework used across Vend",
           "Directed resources to meaningfully improve diversity at all levels"
         ]
