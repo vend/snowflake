@@ -72,7 +72,7 @@ export const maxLevel = 135
 
 export interface Track {
   displayName: string
-  category: string // TK categoryId type?
+  category: 'A' | 'B' | 'C' | 'D'
   summary: string
   description?: string
   milestones: Array<{
@@ -1414,10 +1414,9 @@ export const tracks: Tracks = {
 
 export const trackIds: TrackId[] = Object.keys(tracks) as Array<keyof Tracks>
 
-export const categoryIds: Set<string> = trackIds.reduce((set, trackId) => {
-  set.add(tracks[trackId].category)
-  return set
-}, new Set<string>())
+export const categoryIds = new Set(
+  trackIds.map(trackId => tracks[trackId].category)
+)
 
 export const categoryPointsFromMilestoneMap = (milestoneMap: MilestoneMap) => {
   const pointsByCategory = new Map()
@@ -1430,7 +1429,7 @@ export const categoryPointsFromMilestoneMap = (milestoneMap: MilestoneMap) => {
       currentPoints + milestoneToPoints(milestone)
     )
   })
-  return Array.from(categoryIds.values()).map(categoryId => {
+  return Array.from(categoryIds).map(categoryId => {
     return { categoryId, points: pointsByCategory.get(categoryId) || 0 }
   })
 }
