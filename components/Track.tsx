@@ -1,17 +1,17 @@
-import { tracks, milestones, categoryColorScale } from '../constants'
 import React from 'react'
+import { tracks, milestones, categoryColorScale } from '../constants'
 import type { MilestoneMap, NoteMap, TrackId, Milestone } from '../constants'
 
-type Props = {
-  milestoneByTrack: MilestoneMap,
-  notesByTrack: NoteMap,
-  trackId: TrackId,
-  handleTrackMilestoneChangeFn: (trackId: TrackId, milestone: Milestone) => void,
+interface Props {
+  milestoneByTrack: MilestoneMap
+  notesByTrack: NoteMap
+  trackId: TrackId
+  handleTrackMilestoneChangeFn: (trackId: TrackId, milestone: Milestone) => void
   handleTrackNoteChangeFn: (trackId: TrackId, note: string) => void
 }
 
 class Track extends React.Component<Props> {
-  render() {
+  public render() {
     const track = tracks[this.props.trackId]
     const currentMilestoneId = this.props.milestoneByTrack[this.props.trackId]
     const currentMilestone = track.milestones[currentMilestoneId - 1]
@@ -50,27 +50,50 @@ class Track extends React.Component<Props> {
         `}</style>
         <h2>{track.displayName}</h2>
         <div className="track-description">
-          <p><em>{track.summary}</em></p>
+          <p>
+            <em>{track.summary}</em>
+          </p>
           {track.description ? <p>{track.description}</p> : null}
         </div>
-        <div style={{display: 'flex'}}>
-          <table style={{flex: 0, marginRight: 50}}>
+        <div style={{ display: 'flex' }}>
+          <table style={{ flex: 0, marginRight: 50 }}>
             <tbody>
-              {milestones.slice().reverse().map((milestone) => {
-                const isMet = milestone <= currentMilestoneId
-                return (
-                  <tr key={milestone}>
-                    <td onClick={() => this.props.handleTrackMilestoneChangeFn(this.props.trackId, milestone as Milestone)}
-                        style={{border: `4px solid ${milestone === currentMilestoneId ? '#000' : isMet ? categoryColorScale(track.category) : '#eee'}`, background: isMet ? categoryColorScale(track.category) : undefined}}>
-                      {milestone}
-                    </td>
-                  </tr>
-                )
-              })}
+              {milestones
+                .slice()
+                .reverse()
+                .map(milestone => {
+                  const isMet = milestone <= currentMilestoneId
+                  return (
+                    <tr key={milestone}>
+                      <td
+                        onClick={() =>
+                          this.props.handleTrackMilestoneChangeFn(
+                            this.props.trackId,
+                            milestone as Milestone
+                          )
+                        }
+                        style={{
+                          border: `4px solid ${
+                            milestone === currentMilestoneId
+                              ? '#000'
+                              : isMet
+                              ? categoryColorScale(track.category)
+                              : '#eee'
+                          }`,
+                          background: isMet
+                            ? categoryColorScale(track.category)
+                            : undefined,
+                        }}
+                      >
+                        {milestone}
+                      </td>
+                    </tr>
+                  )
+                })}
             </tbody>
           </table>
           {currentMilestone ? (
-            <div style={{flex: 1}}>
+            <div style={{ flex: 1 }}>
               <h3>{currentMilestone.summary}</h3>
               <h4>Example behaviors:</h4>
               <ul>
@@ -87,12 +110,18 @@ class Track extends React.Component<Props> {
             </div>
           ) : null}
         </div>
-        <div style={{display: 'flex'}}>
+        <div style={{ display: 'flex' }}>
           <textarea
-            style={{flex: 1}}
+            style={{ flex: 1 }}
             rows={10}
             value={currentNotes}
-            onChange={e => this.props.handleTrackNoteChangeFn(this.props.trackId, e.currentTarget.value)} />
+            onChange={e =>
+              this.props.handleTrackNoteChangeFn(
+                this.props.trackId,
+                e.currentTarget.value
+              )
+            }
+          />
         </div>
       </div>
     )

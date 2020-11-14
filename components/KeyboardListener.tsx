@@ -1,23 +1,27 @@
 import React from 'react'
 
-type Props = {
-  increaseFocusedMilestoneFn: () => void,
-  selectNextTrackFn: () => void,
-  decreaseFocusedMilestoneFn: () => void,
+interface Props {
+  increaseFocusedMilestoneFn: () => void
+  selectNextTrackFn: () => void
+  decreaseFocusedMilestoneFn: () => void
   selectPrevTrackFn: () => void
 }
 
 class KeyboardListener extends React.Component<Props> {
-  componentDidMount() {
-    window.addEventListener('keydown', (e) => this.handleKeyDown(e)) // TK unlisten
+  public componentDidMount() {
+    window.addEventListener('keydown', e => this.handleKeyDown(e)) // TK unlisten
   }
 
-  handleKeyDown(e: KeyboardEvent) {
-    if (document.activeElement && document.activeElement.tagName === 'INPUT') {
+  private handleKeyDown(e: KeyboardEvent) {
+    if (
+      document.activeElement &&
+      (document.activeElement.tagName === 'INPUT' ||
+        document.activeElement.tagName === 'TEXTAREA')
+    ) {
       // Don't do shortcuts while input has focus.
       return
     }
-    switch(e.code) {
+    switch (e.code) {
       case 'ArrowUp':
         this.props.increaseFocusedMilestoneFn()
         e.preventDefault()
@@ -37,10 +41,9 @@ class KeyboardListener extends React.Component<Props> {
     }
   }
 
-  render() {
+  public render() {
     return null
   }
-
 }
 
 export default KeyboardListener

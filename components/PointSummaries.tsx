@@ -1,16 +1,16 @@
+import React from 'react'
 import { pointsToLevels, totalPointsFromMilestoneMap } from '../constants'
 import type { MilestoneMap } from '../constants'
-import React from 'react'
 
-type Props = {
+interface Props {
   milestoneByTrack: MilestoneMap
 }
 
 class PointSummaries extends React.Component<Props> {
-  render() {
+  public render() {
     const totalPoints = totalPointsFromMilestoneMap(this.props.milestoneByTrack)
 
-    let currentLevel, nextLevel
+    let currentLevel
 
     let pointsForCurrentLevel = totalPoints
     while (!(currentLevel = pointsToLevels[pointsForCurrentLevel])) {
@@ -18,7 +18,7 @@ class PointSummaries extends React.Component<Props> {
     }
 
     let pointsToNextLevel: number | string = 1
-    while (!(nextLevel = pointsToLevels[totalPoints + pointsToNextLevel])) {
+    while (!pointsToLevels[totalPoints + pointsToNextLevel]) {
       pointsToNextLevel++
       if (pointsToNextLevel > 135) {
         pointsToNextLevel = 'N/A'
@@ -29,16 +29,16 @@ class PointSummaries extends React.Component<Props> {
     const blocks = [
       {
         label: 'Current level',
-        value: currentLevel
+        value: currentLevel,
       },
       {
         label: 'Total points',
-        value: totalPoints
+        value: totalPoints,
       },
       {
         label: 'Points to next level',
-        value: pointsToNextLevel
-      }
+        value: pointsToNextLevel,
+      },
     ]
 
     return (
@@ -67,18 +67,18 @@ class PointSummaries extends React.Component<Props> {
         `}</style>
         <tbody>
           <tr>
-          {blocks.map(({label}, i) => (
-            <th key={i} className="point-summary-label">
-              {label}
-            </th>
-          ))}
+            {blocks.map(({ label }, i) => (
+              <th key={i} className="point-summary-label">
+                {label}
+              </th>
+            ))}
           </tr>
           <tr>
-          {blocks.map(({value}, i) => (
-            <td key={i} className="point-summary-value">
-              {value}
-            </td>
-          ))}
+            {blocks.map(({ value }, i) => (
+              <td key={i} className="point-summary-value">
+                {value}
+              </td>
+            ))}
           </tr>
         </tbody>
       </table>
