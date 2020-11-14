@@ -20,35 +20,66 @@ interface Props {
   milestoneByTrack: MilestoneMap
 }
 
+const pointScale = d3
+  .scaleLinear()
+  .domain([0, 135])
+  .rangeRound([0, width - margins.left - margins.right])
+
+const topAxisFn = d3
+  .axisTop<string>(pointScale as any)
+  .tickValues(Object.keys(pointsToLevels))
+  .tickFormat(points => pointsToLevels[points])
+
+const bottomAxisFn = d3
+  .axisBottom<string>(pointScale as any)
+  .scale(pointScale as any)
+  .tickValues(Object.keys(pointsToLevels))
+
+function rightRoundedRect(
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  radius: number
+): string {
+  return (
+    'M' +
+    x +
+    ',' +
+    y +
+    'h' +
+    (width - radius) +
+    'a' +
+    radius +
+    ',' +
+    radius +
+    ' 0 0 1 ' +
+    radius +
+    ',' +
+    radius +
+    'v' +
+    (height - 2 * radius) +
+    'a' +
+    radius +
+    ',' +
+    radius +
+    ' 0 0 1 ' +
+    -radius +
+    ',' +
+    radius +
+    'h' +
+    (radius - width) +
+    'z'
+  )
+}
+
 class LevelThermometer extends React.Component<Props> {
-  private pointScale: any
-  private topAxisFn: any
-  private bottomAxisFn: any
   private topAxis: any
   private bottomAxis: any
 
-  constructor(props: any) {
-    super(props)
-
-    this.pointScale = d3
-      .scaleLinear()
-      .domain([0, 135])
-      .rangeRound([0, width - margins.left - margins.right])
-
-    this.topAxisFn = d3
-      .axisTop<string>(this.pointScale)
-      .tickValues(Object.keys(pointsToLevels))
-      .tickFormat(points => pointsToLevels[points])
-
-    this.bottomAxisFn = d3
-      .axisBottom<string>(this.pointScale)
-      .scale(this.pointScale)
-      .tickValues(Object.keys(pointsToLevels))
-  }
-
   public componentDidMount() {
     d3.select(this.topAxis)
-      .call(this.topAxisFn)
+      .call(topAxisFn)
       .selectAll('text')
       .attr('y', 0)
       .attr('x', -25)
@@ -57,7 +88,7 @@ class LevelThermometer extends React.Component<Props> {
       .style('font-size', '12px')
       .style('text-anchor', 'start')
     d3.select(this.bottomAxis)
-      .call(this.bottomAxisFn)
+      .call(bottomAxisFn)
       .selectAll('text')
       .attr('y', 0)
       .attr('x', 10)
@@ -65,44 +96,6 @@ class LevelThermometer extends React.Component<Props> {
       .attr('dy', '.35em')
       .style('font-size', '12px')
       .style('text-anchor', 'start')
-  }
-
-  private rightRoundedRect(
-    x: number,
-    y: number,
-    width: number,
-    height: number,
-    radius: number
-  ): string {
-    return (
-      'M' +
-      x +
-      ',' +
-      y +
-      'h' +
-      (width - radius) +
-      'a' +
-      radius +
-      ',' +
-      radius +
-      ' 0 0 1 ' +
-      radius +
-      ',' +
-      radius +
-      'v' +
-      (height - 2 * radius) +
-      'a' +
-      radius +
-      ',' +
-      radius +
-      ' 0 0 1 ' +
-      -radius +
-      ',' +
-      radius +
-      'h' +
-      (radius - width) +
-      'z'
-    )
   }
 
   public render() {
@@ -128,9 +121,9 @@ class LevelThermometer extends React.Component<Props> {
         <svg>
           <g transform={`translate(${margins.left},${margins.top})`}>
             {categoryPoints.map((categoryPoint, i) => {
-              const x = this.pointScale(cumulativePoints)
+              const x = pointScale(cumulativePoints)
               const width =
-                this.pointScale(cumulativePoints + categoryPoint.points) - x
+                pointScale(cumulativePoints + categoryPoint.points) - x
               cumulativePoints += categoryPoint.points
               return i !== lastCategoryIndex ? (
                 <rect
@@ -147,7 +140,7 @@ class LevelThermometer extends React.Component<Props> {
               ) : (
                 <path
                   key={categoryPoint.categoryId}
-                  d={this.rightRoundedRect(
+                  d={rightRoundedRect(
                     x,
                     0,
                     width,
