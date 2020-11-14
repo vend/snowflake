@@ -76,27 +76,21 @@ export default class SheetsControl extends React.Component<Props, State> {
     }
   }
 
-  private initClient() {
-    gapi.client
-      .init({
-        apiKey: API_KEY,
-        clientId: CLIENT_ID,
-        discoveryDocs: DISCOVERY_DOCS,
-        scope: SCOPES,
-      })
-      .then(() => {
-        // Listen for sign-in state changes.
-        gapi.auth2
-          .getAuthInstance()
-          .isSignedIn.listen(this.updateSigninStatus.bind(this))
+  private async initClient() {
+    await gapi.client.init({
+      apiKey: API_KEY,
+      clientId: CLIENT_ID,
+      discoveryDocs: DISCOVERY_DOCS,
+      scope: SCOPES,
+    })
 
-        // Handle the initial sign-in state.
-        this.updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get())
-      })
-      .catch((error: any) => {
-        // eslint-disable-next-line no-console
-        console.log('init failed', error)
-      })
+    // Listen for sign-in state changes.
+    gapi.auth2
+      .getAuthInstance()
+      .isSignedIn.listen(this.updateSigninStatus.bind(this))
+
+    // Handle the initial sign-in state.
+    this.updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get())
   }
 
   private updateSigninStatus(isSignedIn: boolean) {
@@ -163,38 +157,36 @@ export default class SheetsControl extends React.Component<Props, State> {
     gapi.auth2.getAuthInstance().signIn()
   }
 
-  private importSheet = () => {
+  private importSheet = async () => {
     if (!this.state.sheetId) {
       return
     }
     // Get stuff from sheet
-    gapi.client.sheets.spreadsheets.values
-      .get({
-        spreadsheetId: this.state.sheetId,
-        range: RANGE,
-        majorDimension: 'COLUMNS',
-      })
-      .then((response: any) => {
-        const range = response.result
-        if (range.values.length > 0) {
-          // Special-case the first two rows
-          const name = range.values[0][0]
-          const title = range.values[1][0]
-          // Skip the third as they're just constant headers
-          const milestones = range.values[0]
-            .slice(3)
-            .map((val: string) => parseInt(val[0], 10))
-          const notes = range.values[1].slice(3)
-          this.props.onImport(name, title, milestones, notes)
-        }
-      })
+    const response = await gapi.client.sheets.spreadsheets.values.get({
+      spreadsheetId: this.state.sheetId,
+      range: RANGE,
+      majorDimension: 'COLUMNS',
+    })
+
+    const range = response.result
+    if (range.values.length > 0) {
+      // Special-case the first two rows
+      const name = range.values[0][0]
+      const title = range.values[1][0]
+      // Skip the third as they're just constant headers
+      const milestones = range.values[0]
+        .slice(3)
+        .map((val: string) => parseInt(val[0], 10))
+      const notes = range.values[1].slice(3)
+      this.props.onImport(name, title, milestones, notes)
+    }
   }
 
   private handleSignOutClick = () => {
     gapi.auth2.getAuthInstance().signOut()
   }
 
-  private handleCreateClick = () => {
+  private handleCreateClick = async () => {
     const rowValue = (val: number | string, bold: boolean) => ({
       userEnteredValue: {
         [typeof val === 'number' ? 'numberValue' : 'stringValue']: val,
@@ -222,19 +214,18 @@ export default class SheetsControl extends React.Component<Props, State> {
         values: row.map((val, j) => rowValue(val, i === 2 || j === 0)),
       },
     }))
-    gapi.client.sheets.spreadsheets
-      .create({
-        properties: {
-          title: `${this.props.name}'s Snowflake`,
-        },
-        sheets: [{ data }],
-      })
-      .then((response: any) => {
-        this.setState({ sheetId: response.result.spreadsheetId })
-      })
+
+    const response = await gapi.client.sheets.spreadsheets.create({
+      properties: {
+        title: `${this.props.name}'s Snowflake`,
+      },
+      sheets: [{ data }],
+    })
+
+    this.setState({ sheetId: response.result.spreadsheetId })
   }
 
-  private handleSaveClick = () => {
+  private handleSaveClick = async () => {
     const headers: Array<Array<number | string>> = [
       [this.props.name],
       [this.props.title],
@@ -244,19 +235,15 @@ export default class SheetsControl extends React.Component<Props, State> {
       this.props.milestoneByTrack[trackId],
       this.props.notesByTrack[trackId],
     ]) as Array<Array<number | string>>
-    gapi.client.sheets.spreadsheets.values
-      .update({
-        spreadsheetId: this.state.sheetId,
-        range: RANGE,
-        valueInputOption: 'USER_ENTERED',
-        resource: {
-          majorDimension: 'ROWS',
-          values: headers.concat(values),
-        },
-      })
-      .catch((error: any) => {
-        // eslint-disable-next-line no-console
-        console.log('error saving', error)
-      })
+
+    await gapi.client.sheets.spreadsheets.values.update({
+      spreadsheetId: this.state.sheetId,
+      range: RANGE,
+      valueInputOption: 'USER_ENTERED',
+      resource: {
+        majorDimension: 'ROWS',
+        values: headers.concat(values),
+      },
+    })
   }
 }
