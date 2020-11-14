@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react'
 import * as d3 from 'd3'
 import { trackIds, milestones, tracks, categoryColorScale } from '../constants'
@@ -11,7 +9,7 @@ const arcMilestones = milestones.slice(1) // we'll draw the '0' milestone with a
 type Props = {
   milestoneByTrack: MilestoneMap,
   focusedTrackId: TrackId,
-  handleTrackMilestoneChangeFn: (TrackId, Milestone) => void
+  handleTrackMilestoneChangeFn: (trackId: TrackId, milestone: Milestone) => void
 }
 
 class NightingaleChart extends React.Component<Props> {
@@ -19,13 +17,13 @@ class NightingaleChart extends React.Component<Props> {
   radiusScale: any
   arcFn: any
 
-  constructor(props: *) {
+  constructor(props: any) {
     super(props)
 
     this.colorScale = d3.scaleSequential(d3.interpolateWarm)
       .domain([0, 5])
 
-    this.radiusScale = d3.scaleBand()
+    this.radiusScale = d3.scaleBand<number>()
       .domain(arcMilestones)
       .range([.15 * width, .45 * width])
       .paddingInner(0.1)
@@ -75,7 +73,7 @@ class NightingaleChart extends React.Component<Props> {
                       <path
                           key={milestone}
                           className={'track-milestone ' + (isMet ? 'is-met ' : ' ') + (isCurrentMilestone ? 'track-milestone-current' : '')}
-                          onClick={() => this.props.handleTrackMilestoneChangeFn(trackId, milestone)}
+                          onClick={() => this.props.handleTrackMilestoneChangeFn(trackId, milestone as Milestone)}
                           d={this.arcFn(milestone)}
                           style={{fill: isMet ? categoryColorScale(tracks[trackId].category) : undefined}} />
                     )

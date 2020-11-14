@@ -1,7 +1,6 @@
-// @flow
 import * as d3 from "d3";
 
-type Tracks = {|
+type Tracks = {
   "MOBILE": Track,
   "WEB_CLIENT": Track,
   "FOUNDATIONS (PLATFORM)": Track,
@@ -18,17 +17,17 @@ type Tracks = {|
   "EVANGELISM": Track,
   "RECRUITING": Track,
   "COMMUNITY": Track
-|};
+};
 
-export type TrackId = $Keys<Tracks>;
+export type TrackId = keyof Tracks;
 export type Milestone = 0 | 1 | 2 | 3 | 4 | 5;
 
 export type NoteMap = {
-  [TrackId]: ?string
-}
+  [track in TrackId]?: string;
+};
 
 export type MilestoneMap = {
-  [TrackId]: Milestone
+  [track in TrackId]: Milestone;
 };
 export const milestones = [0, 1, 2, 3, 4, 5];
 
@@ -51,7 +50,7 @@ export const milestoneToPoints = (milestone: Milestone): number => {
   }
 };
 
-export const pointsToLevels = {
+export const pointsToLevels: Record<string, string> = {
   "0": "1.1",
   "5": "1.2",
   "11": "1.3",
@@ -75,7 +74,7 @@ export type Track = {
   displayName: string,
   category: string, // TK categoryId type?
   summary: string,
-  description: string,
+  description?: string,
   milestones: {
     summary: string,
     signals: string[],
@@ -335,7 +334,7 @@ export const tracks: Tracks = {
       }
     ]
   },
- 
+
 
   "SERVERS & API": {
     displayName: "Services & APIs",
@@ -1318,12 +1317,12 @@ export const tracks: Tracks = {
   }
 };
 
-export const trackIds: TrackId[] = Object.keys(tracks);
+export const trackIds: TrackId[] = Object.keys(tracks) as Array<keyof Tracks>;
 
 export const categoryIds: Set<string> = trackIds.reduce((set, trackId) => {
   set.add(tracks[trackId].category);
   return set;
-}, new Set());
+}, new Set<string>());
 
 export const categoryPointsFromMilestoneMap = (milestoneMap: MilestoneMap) => {
   let pointsByCategory = new Map();
@@ -1350,8 +1349,8 @@ export const totalPointsFromMilestoneMap = (
     .reduce((sum, addend) => sum + addend, 0);
 
 export const categoryColorScale = d3
-  .scaleOrdinal()
-  .domain(categoryIds)
+  .scaleOrdinal<string>()
+  .domain(Array.from(categoryIds))
   .range(["#00abc2", "#428af6", "#e1439f", "#e54552"]);
 
 export const titles = [

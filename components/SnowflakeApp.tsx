@@ -1,18 +1,16 @@
-// @flow
-
 import type { Milestone, MilestoneMap, NoteMap, TrackId } from '../constants'
 import { eligibleTitles, milestoneToPoints, milestones, trackIds } from '../constants'
 
-import KeyboardListener from '../components/KeyboardListener'
-import LevelThermometer from '../components/LevelThermometer'
-import NightingaleChart from '../components/NightingaleChart'
-import PointSummaries from '../components/PointSummaries'
-import SheetsControl from '../components/SheetsControl'
+import KeyboardListener from './KeyboardListener'
+import LevelThermometer from './LevelThermometer'
+import NightingaleChart from './NightingaleChart'
+import PointSummaries from './PointSummaries'
+import SheetsControl from './SheetsControl'
 import React from 'react'
-import TitleSelector from '../components/TitleSelector'
-import Track from '../components/Track'
-import TrackSelector from '../components/TrackSelector'
-import Wordmark from '../components/Wordmark'
+import TitleSelector from './TitleSelector'
+import Track from './Track'
+import TrackSelector from './TrackSelector'
+import Wordmark from './Wordmark'
 
 type SnowflakeAppState = {
   notesByTrack: NoteMap,
@@ -22,7 +20,7 @@ type SnowflakeAppState = {
   focusedTrackId: TrackId,
 }
 
-const hashToState = (hash: String): ?SnowflakeAppState => {
+const hashToState = (hash: String): SnowflakeAppState | null => {
   if (!hash) return null
   const result = defaultState()
   const hashValues = hash.split('#')[1].split(',')
@@ -104,7 +102,7 @@ const defaultState = (): SnowflakeAppState => {
 
 const stateToHash = (state: SnowflakeAppState) => {
   if (!state || !state.milestoneByTrack) return null
-  const values = trackIds.map(trackId => state.milestoneByTrack[trackId]).concat(encodeURI(state.name), encodeURI(state.title))
+  const values = trackIds.map(trackId => String(state.milestoneByTrack[trackId])).concat(encodeURI(state.name), encodeURI(state.title))
   return values.join(',')
 }
 
@@ -227,11 +225,11 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
   }
 
   handleSheetsImport(name: string, title: string, milestones: Milestone[], notes: string[]) {
-    const milestoneByTrack = {}
+    const milestoneByTrack = {} as MilestoneMap
     milestones.forEach((milestone, i) => {
       milestoneByTrack[trackIds[i]] = milestone
     })
-    const notesByTrack = {}
+    const notesByTrack = {} as NoteMap
     notes.forEach((note, i) => {
       notesByTrack[trackIds[i]] = note
     })

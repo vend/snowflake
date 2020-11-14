@@ -1,5 +1,3 @@
-// @flow
-
 import css from 'styled-jsx/css'
 
 import type { Milestone, MilestoneMap, NoteMap } from '../constants'
@@ -18,6 +16,8 @@ const SCOPES = "https://www.googleapis.com/auth/spreadsheets"
 const RANGE = `B1:C${trackIds.length+3}`
 
 const DOCS_URL_REGEX = /^https:\/\/docs.google.com\/spreadsheets\/d\/([0-9a-zA-Z_\-]+)/
+
+let gapiInit = false
 
 type Props = {
   name: string,
@@ -57,17 +57,15 @@ export default class SheetsControl extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    window.sheetsControl = this
+    if (!gapiInit) {
+      gapi.load('client', this.initClient.bind(this))
+    }
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.state.isSignedIn && !prevState.isSignedIn) {
       this.importSheet()
     }
-  }
-
-  componentWillUnmount() {
-    delete window.sheetsControl
   }
 
   initClient() {
@@ -84,7 +82,7 @@ export default class SheetsControl extends React.Component<Props, State> {
 
       // Handle the initial sign-in state.
       this.updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get())
-    }).catch(error => {
+    }).catch((error: any) => {
       console.log('init failed', error)
     })
   }
@@ -128,7 +126,7 @@ export default class SheetsControl extends React.Component<Props, State> {
     }
   }
 
-  handleSheetChange(e: SyntheticEvent<HTMLButtonElement>) {
+  handleSheetChange(e: React.ChangeEvent<HTMLInputElement>) {
     const val = e.currentTarget.value
     const match = val.match(DOCS_URL_REGEX)
     if (match) {
@@ -153,7 +151,7 @@ export default class SheetsControl extends React.Component<Props, State> {
       spreadsheetId: this.state.sheetId,
       range: RANGE,
       majorDimension: 'COLUMNS'
-    }).then(response => {
+    }).then((response: any) => {
       console.log('imported sheet')
       const range = response.result
       if (range.values.length > 0) {
@@ -161,7 +159,7 @@ export default class SheetsControl extends React.Component<Props, State> {
         const name = range.values[0][0]
         const title = range.values[1][0]
         // Skip the third as they're just constant headers
-        const milestones = range.values[0].slice(3).map(val => parseInt(val[0]))
+        const milestones = range.values[0].slice(3).map((val: string) => parseInt(val[0]))
         const notes = range.values[1].slice(3)
         this.props.onImport(name, title, milestones, notes)
       } else {
@@ -175,7 +173,7 @@ export default class SheetsControl extends React.Component<Props, State> {
   }
 
   handleCreateClick() {
-    const rowValue = (val, bold) => ({
+    const rowValue = (val: number | string, bold: boolean) => ({
       userEnteredValue: {
         [typeof val === 'number' ? 'numberValue' : 'stringValue']: val
       },
@@ -190,7 +188,7 @@ export default class SheetsControl extends React.Component<Props, State> {
       tracks[trackId].displayName,
       this.props.milestoneByTrack[trackId],
       this.props.notesByTrack[trackId]
-    ])
+    ]) as Array<Array<number | string>>
     rows.unshift([
       'Track',
       'Milestone',
@@ -215,13 +213,13 @@ export default class SheetsControl extends React.Component<Props, State> {
         title: `${this.props.name}'s Snowflake`
       },
       sheets: [ { data } ]
-    }).then(response => {
+    }).then((response: any) => {
       this.setState({ sheetId: response.result.spreadsheetId })
     })
   }
 
   handleSaveClick() {
-    const headers = [
+    const headers: Array<Array<number | string>> = [
       [this.props.name],
       [this.props.title],
       ['Milestone', 'Notes']
@@ -229,7 +227,7 @@ export default class SheetsControl extends React.Component<Props, State> {
     const values = trackIds.map(trackId => [
       this.props.milestoneByTrack[trackId],
       this.props.notesByTrack[trackId]
-    ])
+    ]) as Array<Array<number | string>>
     gapi.client.sheets.spreadsheets.values.update({
       spreadsheetId: this.state.sheetId,
       range: RANGE,

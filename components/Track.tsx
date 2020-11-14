@@ -1,5 +1,3 @@
-// @flow
-
 import { tracks, milestones, categoryColorScale } from '../constants'
 import React from 'react'
 import type { MilestoneMap, NoteMap, TrackId, Milestone } from '../constants'
@@ -8,8 +6,8 @@ type Props = {
   milestoneByTrack: MilestoneMap,
   notesByTrack: NoteMap,
   trackId: TrackId,
-  handleTrackMilestoneChangeFn: (TrackId, Milestone) => void,
-  handleTrackNoteChangeFn: (TrackId, string) => void
+  handleTrackMilestoneChangeFn: (trackId: TrackId, milestone: Milestone) => void,
+  handleTrackNoteChangeFn: (trackId: TrackId, note: string) => void
 }
 
 class Track extends React.Component<Props> {
@@ -62,7 +60,7 @@ class Track extends React.Component<Props> {
                 const isMet = milestone <= currentMilestoneId
                 return (
                   <tr key={milestone}>
-                    <td onClick={() => this.props.handleTrackMilestoneChangeFn(this.props.trackId, milestone)}
+                    <td onClick={() => this.props.handleTrackMilestoneChangeFn(this.props.trackId, milestone as Milestone)}
                         style={{border: `4px solid ${milestone === currentMilestoneId ? '#000' : isMet ? categoryColorScale(track.category) : '#eee'}`, background: isMet ? categoryColorScale(track.category) : undefined}}>
                       {milestone}
                     </td>
@@ -92,7 +90,7 @@ class Track extends React.Component<Props> {
         <div style={{display: 'flex'}}>
           <textarea
             style={{flex: 1}}
-            rows='10'
+            rows={10}
             value={currentNotes}
             onChange={e => this.props.handleTrackNoteChangeFn(this.props.trackId, e.currentTarget.value)} />
         </div>

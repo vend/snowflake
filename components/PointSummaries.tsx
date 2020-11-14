@@ -1,6 +1,4 @@
-// @flow
-
-import { pointsToLevels, milestoneToPoints, trackIds, totalPointsFromMilestoneMap } from '../constants'
+import { pointsToLevels, totalPointsFromMilestoneMap } from '../constants'
 import type { MilestoneMap } from '../constants'
 import React from 'react'
 
@@ -19,7 +17,7 @@ class PointSummaries extends React.Component<Props> {
       pointsForCurrentLevel--
     }
 
-    let pointsToNextLevel = 1
+    let pointsToNextLevel: number | string = 1
     while (!(nextLevel = pointsToLevels[totalPoints + pointsToNextLevel])) {
       pointsToNextLevel++
       if (pointsToNextLevel > 135) {
