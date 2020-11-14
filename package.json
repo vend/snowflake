@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "next",
     "export": "next build && next export",
-    "lint": "yarn eslint './{components,pages}/*.{js,jsx,ts,tsx}' constants.ts",
+    "lint": "yarn eslint './{components,pages}/*.{js,jsx,ts,tsx}' ./*.ts",
     "postinstall": "next build && next export"
   },
   "devDependencies": {
