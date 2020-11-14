@@ -1,5 +1,5 @@
 import * as d3 from 'd3'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import {
   pointsToLevels,
   categoryPointsFromMilestoneMap,
@@ -73,13 +73,15 @@ function rightRoundedRect(
   )
 }
 
-class LevelThermometer extends React.Component<Props> {
-  private topAxis: any
-  private bottomAxis: any
+const LevelThermometer: React.FunctionComponent<Props> = ({
+  milestoneByTrack,
+}) => {
+  const topAxis = useRef<SVGGElement>(null)
+  const bottomAxis = useRef<SVGGElement>(null)
 
-  public componentDidMount() {
-    d3.select(this.topAxis)
-      .call(topAxisFn)
+  useEffect(() => {
+    d3.select(topAxis.current)
+      .call(topAxisFn as any)
       .selectAll('text')
       .attr('y', 0)
       .attr('x', -25)
@@ -87,8 +89,8 @@ class LevelThermometer extends React.Component<Props> {
       .attr('dy', '.35em')
       .style('font-size', '12px')
       .style('text-anchor', 'start')
-    d3.select(this.bottomAxis)
-      .call(bottomAxisFn)
+    d3.select(bottomAxis.current)
+      .call(bottomAxisFn as any)
       .selectAll('text')
       .attr('y', 0)
       .attr('x', 10)
@@ -96,78 +98,70 @@ class LevelThermometer extends React.Component<Props> {
       .attr('dy', '.35em')
       .style('font-size', '12px')
       .style('text-anchor', 'start')
-  }
+  }, [])
 
-  public render() {
-    const categoryPoints = categoryPointsFromMilestoneMap(
-      this.props.milestoneByTrack
-    )
-    let lastCategoryIndex = 0
-    categoryPoints.forEach((categoryPoint, i) => {
-      if (categoryPoint.points) lastCategoryIndex = i
-    })
-    let cumulativePoints = 0
-    return (
-      <figure>
-        <style jsx>{`
-          figure {
-            margin: 0 0 0 -10px;
-          }
-          svg {
-            width: ${width}px;
-            height: ${height + 10}px;
-          }
-        `}</style>
-        <svg>
-          <g transform={`translate(${margins.left},${margins.top})`}>
-            {categoryPoints.map((categoryPoint, i) => {
-              const x = pointScale(cumulativePoints)
-              const width =
-                pointScale(cumulativePoints + categoryPoint.points) - x
-              cumulativePoints += categoryPoint.points
-              return i !== lastCategoryIndex ? (
-                <rect
-                  key={categoryPoint.categoryId}
-                  x={x}
-                  y={0}
-                  width={width}
-                  height={height - margins.top - margins.bottom}
-                  style={{
-                    fill: categoryColorScale(categoryPoint.categoryId),
-                    borderRight: '1px solid #000',
-                  }}
-                />
-              ) : (
-                <path
-                  key={categoryPoint.categoryId}
-                  d={rightRoundedRect(
-                    x,
-                    0,
-                    width,
-                    height - margins.top - margins.bottom,
-                    3
-                  )}
-                  style={{ fill: categoryColorScale(categoryPoint.categoryId) }}
-                />
-              )
-            })}
-            <g
-              ref={ref => (this.topAxis = ref)}
-              className="top-axis"
-              transform="translate(0, -2)"
-            />
-            <g
-              ref={ref => (this.bottomAxis = ref)}
-              className="bottom-axis"
-              transform={`translate(0,${
-                height - margins.top - margins.bottom + 1
-              })`}
-            />
-          </g>
-        </svg>
-      </figure>
-    )
-  }
+  const categoryPoints = categoryPointsFromMilestoneMap(milestoneByTrack)
+  let lastCategoryIndex = 0
+  categoryPoints.forEach((categoryPoint, i) => {
+    if (categoryPoint.points) lastCategoryIndex = i
+  })
+  let cumulativePoints = 0
+  return (
+    <figure>
+      <style jsx>{`
+        figure {
+          margin: 0 0 0 -10px;
+        }
+        svg {
+          width: ${width}px;
+          height: ${height + 10}px;
+        }
+      `}</style>
+      <svg>
+        <g transform={`translate(${margins.left},${margins.top})`}>
+          {categoryPoints.map((categoryPoint, i) => {
+            const x = pointScale(cumulativePoints)
+            const width =
+              pointScale(cumulativePoints + categoryPoint.points) - x
+            cumulativePoints += categoryPoint.points
+            return i !== lastCategoryIndex ? (
+              <rect
+                key={categoryPoint.categoryId}
+                x={x}
+                y={0}
+                width={width}
+                height={height - margins.top - margins.bottom}
+                style={{
+                  fill: categoryColorScale(categoryPoint.categoryId),
+                  borderRight: '1px solid #000',
+                }}
+              />
+            ) : (
+              <path
+                key={categoryPoint.categoryId}
+                d={rightRoundedRect(
+                  x,
+                  0,
+                  width,
+                  height - margins.top - margins.bottom,
+                  3
+                )}
+                style={{ fill: categoryColorScale(categoryPoint.categoryId) }}
+              />
+            )
+          })}
+          <g ref={topAxis} className="top-axis" transform="translate(0, -2)" />
+          <g
+            ref={bottomAxis}
+            className="bottom-axis"
+            transform={`translate(0,${
+              height - margins.top - margins.bottom + 1
+            })`}
+          />
+        </g>
+      </svg>
+    </figure>
+  )
 }
 
 export default LevelThermometer
