@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { trackIds, tracks, categoryColorScale } from '../constants'
 import type { MilestoneMap, TrackId } from '../constants'
+import { Context } from '../state'
 
 interface Props {
   milestoneByTrack: MilestoneMap
   focusedTrackId: TrackId
-  setFocusedTrackIdFn: (trackId: TrackId) => void
 }
 
 const TrackSelector: React.FunctionComponent<Props> = ({
   milestoneByTrack,
   focusedTrackId,
-  setFocusedTrackIdFn,
 }) => {
+  const dispatch = useContext(Context)
+
   return (
     <table>
       <style jsx>{`
@@ -45,7 +46,7 @@ const TrackSelector: React.FunctionComponent<Props> = ({
             <td
               key={trackId}
               className="track-selector-label"
-              onClick={() => setFocusedTrackIdFn(trackId)}
+              onClick={() => dispatch(['SetFocusedTrack', trackId])}
             >
               {tracks[trackId].displayName}
             </td>
@@ -64,7 +65,7 @@ const TrackSelector: React.FunctionComponent<Props> = ({
                     : categoryColorScale(tracks[trackId].category)),
                 background: categoryColorScale(tracks[trackId].category),
               }}
-              onClick={() => setFocusedTrackIdFn(trackId)}
+              onClick={() => dispatch(['SetFocusedTrack', trackId])}
             >
               {milestoneByTrack[trackId]}
             </td>

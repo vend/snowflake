@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import * as d3 from 'd3'
 import { trackIds, milestones, tracks, categoryColorScale } from '../constants'
 import type { TrackId, Milestone, MilestoneMap } from '../constants'
+import { Context } from '../state'
 
 const width = 400
 const arcMilestones = milestones.slice(1) // we'll draw the '0' milestone with a circle, not an arc.
@@ -9,7 +10,6 @@ const arcMilestones = milestones.slice(1) // we'll draw the '0' milestone with a
 interface Props {
   milestoneByTrack: MilestoneMap
   focusedTrackId: TrackId
-  handleTrackMilestoneChangeFn: (trackId: TrackId, milestone: Milestone) => void
 }
 
 const radiusScale = d3
@@ -31,8 +31,9 @@ const arcFn = d3
 const NightingaleChart: React.FunctionComponent<Props> = ({
   focusedTrackId,
   milestoneByTrack,
-  handleTrackMilestoneChangeFn,
 }) => {
+  const dispatch = useContext(Context)
+
   const currentMilestoneId = milestoneByTrack[focusedTrackId]
   return (
     <figure>
@@ -78,10 +79,10 @@ const NightingaleChart: React.FunctionComponent<Props> = ({
                         (isCurrentMilestone ? 'track-milestone-current' : '')
                       }
                       onClick={() =>
-                        handleTrackMilestoneChangeFn(
-                          trackId,
-                          milestone as Milestone
-                        )
+                        dispatch([
+                          'TrackMilestoneChange',
+                          { trackId, milestone: milestone as Milestone },
+                        ])
                       }
                       d={arcFn(milestone)!}
                       style={{
@@ -105,7 +106,12 @@ const NightingaleChart: React.FunctionComponent<Props> = ({
                       ? 'track-milestone-current'
                       : '')
                   }
-                  onClick={() => handleTrackMilestoneChangeFn(trackId, 0)}
+                  onClick={() =>
+                    dispatch([
+                      'TrackMilestoneChange',
+                      { trackId, milestone: 0 },
+                    ])
+                  }
                 />
               </g>
             )

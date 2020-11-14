@@ -1,18 +1,18 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { Context } from '../state'
 
-interface Props {
-  increaseFocusedMilestoneFn: () => void
-  selectNextTrackFn: () => void
-  decreaseFocusedMilestoneFn: () => void
-  selectPrevTrackFn: () => void
-}
+const KeyboardListener: React.FunctionComponent = () => {
+  const dispatch = useContext(Context)
 
-class KeyboardListener extends React.Component<Props> {
-  public componentDidMount() {
-    window.addEventListener('keydown', e => this.handleKeyDown(e)) // TK unlisten
-  }
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown)
 
-  private handleKeyDown(e: KeyboardEvent) {
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  })
+
+  function handleKeyDown(e: KeyboardEvent) {
     if (
       document.activeElement &&
       (document.activeElement.tagName === 'INPUT' ||
@@ -23,27 +23,25 @@ class KeyboardListener extends React.Component<Props> {
     }
     switch (e.code) {
       case 'ArrowUp':
-        this.props.increaseFocusedMilestoneFn()
+        dispatch(['ShiftFocusedTrackMilestone', 1])
         e.preventDefault()
         break
       case 'ArrowRight':
-        this.props.selectNextTrackFn()
+        dispatch(['ShiftFocusedTrack', 1])
         e.preventDefault()
         break
       case 'ArrowDown':
-        this.props.decreaseFocusedMilestoneFn()
+        dispatch(['ShiftFocusedTrackMilestone', -1])
         e.preventDefault()
         break
       case 'ArrowLeft':
-        this.props.selectPrevTrackFn()
+        dispatch(['ShiftFocusedTrack', -1])
         e.preventDefault()
         break
     }
   }
 
-  public render() {
-    return null
-  }
+  return null
 }
 
 export default KeyboardListener

@@ -1,21 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { eligibleTitles } from '../constants'
 import type { MilestoneMap } from '../constants'
+import { Context } from '../state'
 
 interface Props {
   milestoneByTrack: MilestoneMap
   currentTitle: string
-  setTitleFn: (arg: string) => void
 }
 
 const TitleSelector: React.FunctionComponent<Props> = ({
   milestoneByTrack,
   currentTitle,
-  setTitleFn,
 }) => {
+  const dispatch = useContext(Context)
+
   const titles = eligibleTitles(milestoneByTrack)
   return (
-    <select value={currentTitle} onChange={e => setTitleFn(e.target.value)}>
+    <select
+      value={currentTitle}
+      onChange={e => dispatch(['SetTitle', e.target.value])}
+    >
       <style jsx>{`
         select {
           font-size: 20px;

@@ -1,22 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { tracks, milestones, categoryColorScale } from '../constants'
 import type { MilestoneMap, NoteMap, TrackId, Milestone } from '../constants'
+import { Context } from '../state'
 
 interface Props {
   milestoneByTrack: MilestoneMap
   notesByTrack: NoteMap
   trackId: TrackId
-  handleTrackMilestoneChangeFn: (trackId: TrackId, milestone: Milestone) => void
-  handleTrackNoteChangeFn: (trackId: TrackId, note: string) => void
 }
 
 const Track: React.FunctionComponent<Props> = ({
   milestoneByTrack,
   notesByTrack,
   trackId,
-  handleTrackMilestoneChangeFn,
-  handleTrackNoteChangeFn,
 }) => {
+  const dispatch = useContext(Context)
+
   const track = tracks[trackId]
   const currentMilestoneId = milestoneByTrack[trackId]
   const currentMilestone = track.milestones[currentMilestoneId - 1]
@@ -72,10 +71,10 @@ const Track: React.FunctionComponent<Props> = ({
                   <tr key={milestone}>
                     <td
                       onClick={() =>
-                        handleTrackMilestoneChangeFn(
-                          trackId,
-                          milestone as Milestone
-                        )
+                        dispatch([
+                          'TrackMilestoneChange',
+                          { trackId, milestone: milestone as Milestone },
+                        ])
                       }
                       style={{
                         border: `4px solid ${
@@ -121,7 +120,10 @@ const Track: React.FunctionComponent<Props> = ({
           rows={10}
           value={currentNotes}
           onChange={e =>
-            handleTrackNoteChangeFn(trackId, e.currentTarget.value)
+            dispatch([
+              'TrackNoteChange',
+              { trackId, note: e.currentTarget.value },
+            ])
           }
         />
       </div>

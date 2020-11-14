@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useRef } from 'react'
 import { trackIds } from '../constants'
-import { SnowflakeAppState, defaultState, reducer } from '../state'
+import { SnowflakeAppState, defaultState, reducer, Context } from '../state'
 
 import KeyboardListener from './KeyboardListener'
 import LevelThermometer from './LevelThermometer'
@@ -37,147 +37,133 @@ const SnowflakeApp: React.FunctionComponent = () => {
   }, [state])
 
   return (
-    <main>
-      <style jsx global>{`
-        body {
-          font-family: Helvetica;
-        }
-        main {
-          width: 960px;
-          margin: 0 auto;
-        }
-        .name-input {
-          border: none;
-          display: block;
-          border-bottom: 2px solid #fff;
-          font-size: 30px;
-          line-height: 40px;
-          font-weight: bold;
-          width: 380px;
-          margin-bottom: 10px;
-        }
-        .name-input:hover,
-        .name-input:focus {
-          border-bottom: 2px solid #ccc;
-          outline: 0;
-        }
-        a {
-          color: #888;
-          text-decoration: none;
-        }
-      `}</style>
-      <div style={{ margin: '19px auto 0', width: 142 }}>
-        <a href="https://vendhq.com/" target="_blank" rel="noreferrer">
-          <Wordmark />
-        </a>
-      </div>
-      <div style={{ display: 'flex' }}>
-        <div style={{ flex: 1 }}>
-          <form>
-            <input
-              type="text"
-              className="name-input"
-              value={state.name}
-              onChange={e => dispatch(['SetName', e.target.value])}
-              placeholder="Name"
-            />
-            <SheetsControl
-              name={state.name}
-              title={state.title}
-              onImport={(name, title, milestones, notes) => {
-                dispatch([
-                  'ImportFromSheet',
-                  { name, title, milestones, notes },
-                ])
-              }}
+    <Context.Provider value={dispatch}>
+      <main>
+        <style jsx global>{`
+          body {
+            font-family: Helvetica;
+          }
+          main {
+            width: 960px;
+            margin: 0 auto;
+          }
+          .name-input {
+            border: none;
+            display: block;
+            border-bottom: 2px solid #fff;
+            font-size: 30px;
+            line-height: 40px;
+            font-weight: bold;
+            width: 380px;
+            margin-bottom: 10px;
+          }
+          .name-input:hover,
+          .name-input:focus {
+            border-bottom: 2px solid #ccc;
+            outline: 0;
+          }
+          a {
+            color: #888;
+            text-decoration: none;
+          }
+        `}</style>
+        <div style={{ margin: '19px auto 0', width: 142 }}>
+          <a href="https://vendhq.com/" target="_blank" rel="noreferrer">
+            <Wordmark />
+          </a>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <div style={{ flex: 1 }}>
+            <form>
+              <input
+                type="text"
+                className="name-input"
+                value={state.name}
+                onChange={e => dispatch(['SetName', e.target.value])}
+                placeholder="Name"
+              />
+              <SheetsControl
+                name={state.name}
+                title={state.title}
+                onImport={(name, title, milestones, notes) => {
+                  dispatch([
+                    'ImportFromSheet',
+                    { name, title, milestones, notes },
+                  ])
+                }}
+                milestoneByTrack={state.milestoneByTrack}
+                notesByTrack={state.notesByTrack}
+              />
+              <TitleSelector
+                milestoneByTrack={state.milestoneByTrack}
+                currentTitle={state.title}
+              />
+            </form>
+            <PointSummaries milestoneByTrack={state.milestoneByTrack} />
+            <LevelThermometer milestoneByTrack={state.milestoneByTrack} />
+          </div>
+          <div style={{ flex: 0 }}>
+            <NightingaleChart
               milestoneByTrack={state.milestoneByTrack}
-              notesByTrack={state.notesByTrack}
+              focusedTrackId={state.focusedTrackId}
             />
-            <TitleSelector
-              milestoneByTrack={state.milestoneByTrack}
-              currentTitle={state.title}
-              setTitleFn={title => dispatch(['SetTitle', title])}
-            />
-          </form>
-          <PointSummaries milestoneByTrack={state.milestoneByTrack} />
-          <LevelThermometer milestoneByTrack={state.milestoneByTrack} />
+          </div>
         </div>
-        <div style={{ flex: 0 }}>
-          <NightingaleChart
-            milestoneByTrack={state.milestoneByTrack}
-            focusedTrackId={state.focusedTrackId}
-            handleTrackMilestoneChangeFn={(track, milestone) =>
-              dispatch(['TrackMilestoneChange', { trackId: track, milestone }])
-            }
-          />
+        <TrackSelector
+          milestoneByTrack={state.milestoneByTrack}
+          focusedTrackId={state.focusedTrackId}
+        />
+        <KeyboardListener />
+        <Track
+          milestoneByTrack={state.milestoneByTrack}
+          notesByTrack={state.notesByTrack}
+          trackId={state.focusedTrackId}
+        />
+        <div style={{ display: 'flex', paddingBottom: '20px' }}>
+          <div style={{ flex: 1 }}>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a href="#" onClick={() => dispatch(['Reset'])}>
+              Reset
+            </a>
+          </div>
+          <div style={{ flex: 5 }}>
+            Forked from{' '}
+            <a
+              href="https://medium.engineering"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Medium Eng
+            </a>
+            . Learn about the{' '}
+            <a
+              href="https://medium.com/s/engineering-growth-framework"
+              target="_blank"
+              rel="noreferrer"
+            >
+              growth framework
+            </a>
+            . Get the{' '}
+            <a
+              href="https://github.com/Medium/snowflake"
+              target="_blank"
+              rel="noreferrer"
+            >
+              source code
+            </a>
+            . Read the{' '}
+            <a
+              href="https://medium.com/p/85e078bc15b7"
+              target="_blank"
+              rel="noreferrer"
+            >
+              terms of service
+            </a>
+            .
+          </div>
         </div>
-      </div>
-      <TrackSelector
-        milestoneByTrack={state.milestoneByTrack}
-        focusedTrackId={state.focusedTrackId}
-        setFocusedTrackIdFn={trackId => dispatch(['SetFocusedTrack', trackId])}
-      />
-      <KeyboardListener
-        selectNextTrackFn={() => dispatch(['ShiftFocusedTrack', 1])}
-        selectPrevTrackFn={() => dispatch(['ShiftFocusedTrack', -1])}
-        increaseFocusedMilestoneFn={() =>
-          dispatch(['ShiftFocusedTrackMilestone', 1])
-        }
-        decreaseFocusedMilestoneFn={() =>
-          dispatch(['ShiftFocusedTrackMilestone', -1])
-        }
-      />
-      <Track
-        milestoneByTrack={state.milestoneByTrack}
-        notesByTrack={state.notesByTrack}
-        trackId={state.focusedTrackId}
-        handleTrackMilestoneChangeFn={(track, milestone) =>
-          dispatch(['TrackMilestoneChange', { trackId: track, milestone }])
-        }
-        handleTrackNoteChangeFn={(track, note) =>
-          dispatch(['TrackNoteChange', { trackId: track, note }])
-        }
-      />
-      <div style={{ display: 'flex', paddingBottom: '20px' }}>
-        <div style={{ flex: 1 }}>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a href="#" onClick={() => dispatch(['Reset'])}>
-            Reset
-          </a>
-        </div>
-        <div style={{ flex: 5 }}>
-          Forked from{' '}
-          <a href="https://medium.engineering" target="_blank" rel="noreferrer">
-            Medium Eng
-          </a>
-          . Learn about the{' '}
-          <a
-            href="https://medium.com/s/engineering-growth-framework"
-            target="_blank"
-            rel="noreferrer"
-          >
-            growth framework
-          </a>
-          . Get the{' '}
-          <a
-            href="https://github.com/Medium/snowflake"
-            target="_blank"
-            rel="noreferrer"
-          >
-            source code
-          </a>
-          . Read the{' '}
-          <a
-            href="https://medium.com/p/85e078bc15b7"
-            target="_blank"
-            rel="noreferrer"
-          >
-            terms of service
-          </a>
-          .
-        </div>
-      </div>
-    </main>
+      </main>
+    </Context.Provider>
   )
 }
 
