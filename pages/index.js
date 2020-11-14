@@ -15,14 +15,16 @@ if (typeof window !== 'undefined') {
   }
 }
 
-export default () => <div>
+const Page = () => <div>
   <Head>
     <script
       async
       defer
       src="https://apis.google.com/js/api.js"
       onLoad="this.onLoad = function(){};handleClientLoad()"
-      onreadystatechange="if (this.readyState === 'complete') this.onload()" />
+      onReadyStateChange="if (this.readyState === 'complete') this.onload()" />
   </Head>
   <SnowflakeApp />
 </div>
+
+export default Page

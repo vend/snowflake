@@ -1,5 +1,7 @@
 // @flow
 
+import css from 'styled-jsx/css'
+
 import type { Milestone, MilestoneMap, NoteMap } from '../constants'
 import { trackIds, tracks } from '../constants'
 
@@ -29,6 +31,21 @@ type State = {
   isSignedIn: boolean,
   sheetId: string
 }
+
+const style = css`
+    button,input {
+      font-size: 20px;
+      line-height: 20px;
+      margin-bottom: 20px;
+      margin-left: 3px;
+      min-width: 100px;
+    }
+    button {
+      border: 1;
+      background: #eee;
+      border-radius: 0px;
+    }
+  `
 
 export default class SheetsControl extends React.Component<Props, State> {
   constructor(props: Props) {
@@ -78,32 +95,17 @@ export default class SheetsControl extends React.Component<Props, State> {
   }
 
   render() {
-    const style = <style jsx>{`
-        button,input {
-          font-size: 20px;
-          line-height: 20px;
-          margin-bottom: 20px;
-          margin-left: 3px;
-          min-width: 100px;
-        }
-        button {
-          border: 1;
-          background: #eee;
-          border-radius: 0px;
-        }
-      `}</style>
-
     if (!this.state.isSignedIn) {
       return (
         <div>
-          {style}
+          <style jsx>{style}</style>
           <button onClick={this.handleAuthClick.bind(this)}>Authorize</button>
         </div>
       )
     } else {
       return (
         <div>
-          {style}
+          <style jsx>{style}</style>
           <div>
             <input
                 type="text"
