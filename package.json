@@ -5,8 +5,8 @@
   "repository": "https://github.com/Medium/eng-growth",
   "license": "MIT",
   "dependencies": {
-    "@types/d3": "^5.7.0",
-    "d3": "5.7.0",
+    "@types/d3": "^6.1.0",
+    "d3": "6.2.0",
     "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1"
