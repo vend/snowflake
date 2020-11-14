@@ -8,28 +8,27 @@ interface Props {
   setTitleFn: (arg: string) => void
 }
 
-class TitleSelector extends React.Component<Props> {
-  public render() {
-    const titles = eligibleTitles(this.props.milestoneByTrack)
-    return (
-      <select
-        value={this.props.currentTitle}
-        onChange={e => this.props.setTitleFn(e.target.value)}
-      >
-        <style jsx>{`
-          select {
-            font-size: 20px;
-            line-height: 20px;
-            margin-bottom: 20px;
-            min-width: 300px;
-          }
-        `}</style>
-        {titles.map(title => (
-          <option key={title}>{title}</option>
-        ))}
-      </select>
-    )
-  }
+const TitleSelector: React.FunctionComponent<Props> = ({
+  milestoneByTrack,
+  currentTitle,
+  setTitleFn,
+}) => {
+  const titles = eligibleTitles(milestoneByTrack)
+  return (
+    <select value={currentTitle} onChange={e => setTitleFn(e.target.value)}>
+      <style jsx>{`
+        select {
+          font-size: 20px;
+          line-height: 20px;
+          margin-bottom: 20px;
+          min-width: 300px;
+        }
+      `}</style>
+      {titles.map(title => (
+        <option key={title}>{title}</option>
+      ))}
+    </select>
+  )
 }
 
 export default TitleSelector
