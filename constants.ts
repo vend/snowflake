@@ -155,7 +155,7 @@ export const tracks: Tracks = {
         examples: [
           'Changed Register’s Sell Screen architecture to use MVVM',
           'Designed and implemented architecture for storing and synchronising sales',
-          'Worked with other teams to come up with a maintainable web based approach for sales history and applying this to other areas where appropriate',
+          'Worked with other teams to come up with a platform independent architecture allowing web content and native content to be fused together',
         ],
       },
       {
