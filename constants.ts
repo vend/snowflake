@@ -86,41 +86,42 @@ export const tracks: Tracks = {
   MOBILE: {
     displayName: 'Mobile',
     category: 'A',
-    summary: 'Develops expertise in native mobile platform engineering on iOS',
+    summary: 'Develops expertise in mobile platform engineering',
     description:
-      'Native apps allow us to provide better, more tailored experiences to users. To build those, we need engineers with expertise in iOS who can help us deliver feature parity across all the platforms we support, and build first class products that blend in seamlessly with platform conventions.',
+      'Native apps allow us to provide better, more tailored experiences to users. To build those, we need engineers with expertise in mobile technologies who can help us deliver feature parity across all the platforms we support. Ultimately building first-class products that blend in seamlessly with platform conventions.',
     milestones: [
       {
         summary:
-          'Works effectively within established iOS architectures, following current best practices',
+          'Works effectively within established mobile architectures, following current best practices',
         signals: [
           'Delivers features requiring simple local modifications',
           'Adds simple actions that call server endpoints',
           'Reuses existing components appropriately',
+          'Considers and accounts for mobile interfaces when building new frontend components',
           'Executes the existing test cases (automated or manual) for mobile applications',
           'Creates simple test cases (automated or manual) for mobile applications',
         ],
         examples: [
-          'Added existing button to a different iOS surface',
-          'Fetched and displayed a new stream, using existing stream item styles',
+          'Added an existing button to a different surface',
           'Ran the automation test suite and/or a manual regression for VendRegister',
+          'Ensured that the revised login page scales and behaves nicely on handsets and tablets',
           "Added a negative test based on the developer's tests for the Gift Card validation feature to extend the test coverage",
         ],
       },
       {
         summary:
-          'Develops new instances of existing architecture, or minor improvements to existing architecture',
+          'Develops new instances of or makes minor improvements to existing architectures',
         signals: [
-          'Defines new useful and appropriate proto-generated objects',
-          'Migrates code from old patterns to new patterns',
-          'Adds simple components to iOS Houston',
-          'Creates comprehensive test suites (not just a single test) and makes minor improvements to the existing framework for mobile applications',
-          'Knows and can use the appropriate tools to debug a problem in the mobile application and provides useful information to developers',
+          'Adds simple components or functionality to an internal package',
+          'When building frontend interfaces considers and accounts for a seamless webview experience when displayed in an native wrapped context',
+          'Creates comprehensive test suites (not just a single test) and makes minor improvements to existing frameworks for mobile applications',
+          'Knows and can use the appropriate tools to debug a problem in a mobile application and provides useful information to developers',
         ],
         examples: [
           'Added support for a new type of promotion',
-          'Prototyped a simple new feature quickly',
-          'Created a whole test suite (automated or manual) and did basic exploratory testing for a new feature of VendRegister',
+          'Spiked a simple new feature quickly',
+          'Adapted sales history to look and behave well within the native app, adding specific functionality to fire events for native devices',
+          'Created a whole test suite (automated or manual) and did basic exploratory testing for a new feature of Scanner for iOS',
           'Investigated and updated a failing automated test for VendRegister',
           'Used Xcode and Charles to correctly identify the underlying problem of a VendRegister bug and helped the developer fix the bug more efficiently',
         ],
@@ -130,16 +131,16 @@ export const tracks: Tracks = {
           'Designs major new features and demonstrates a nuanced understanding of mobile platform constraints',
         signals: [
           'Implements complex features with a large product surface area',
-          'Adds support for new iOS features after a major iOS version upgrade',
-          'Adds complex components to iOS Houston',
+          'Breaks off functionality into a package for consumption within other apps',
+          'Diagnoses and fixes subtle memory management issues',
           'Makes significant improvements to the existing automation test framework for a mobile application',
           'Creates and implements an efficient test strategy for a complex new feature of a mobile application',
         ],
         examples: [
-          'Designed iOS caching strategy for product search',
-          'Informed the team about recent best practice changes and deprecations',
-          'Refactored the automation test framework for VendRegister to improve the test execution efficiency',
+          'Designed a caching strategy for product search',
+          'Informed the team about recent best practice changes and deprecations and how they apply practically',
           'Wrote helper classes to improve code readability and maintainability for VendRegister',
+          'Refactored the automation test framework for VendRegister to improve the test execution efficiency',
           'Created and implemented the test strategy, test scenarios/cases and did thorough exploratory testing for the new Promotions feature in VendRegister',
         ],
       },
@@ -148,25 +149,25 @@ export const tracks: Tracks = {
           'Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively',
         signals: [
           'Pioneers architecture migration strategies that reduce programmer burden',
-          'Fixes subtle memory management issues',
           'Implements interactive dismissals that bring delight',
+          'Coordinates cross-technology approaches without compromising the user experience'
         ],
         examples: [
-          'Upgraded CocoaPods to a new major version',
           'Changed Register’s Sell Screen architecture to use MVVM',
-          'Designed architecture for storing and synchronising sales',
-          'Removed all Singletons in iOS app',
+          'Designed and implemented architecture for storing and synchronising sales',
+          'Worked with other teams to come up with a platform independent architecture allowing web content and native content to be fused together',
         ],
       },
       {
         summary:
-          'Is an industry-leading expert in mobile engineering or sets strategic mobile direction for an eng team',
+          'Is an industry-leading expert in mobile engineering or sets strategic mobile direction for the engineering team',
         signals: [
           'Defines long-term goals and ensures active projects are in service of them',
           'Designs and builds innovative, industry-leading UI interactions',
         ],
         examples: [
           'Defined and drove complete migration plan to Swift',
+          'Defined and executed a mobile strategy targeting multiple platforms',
           'Pioneered application-level abstractions for multi-app environment',
         ],
       },
